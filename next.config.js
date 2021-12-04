@@ -1,3 +1,24 @@
-module.exports = {
-  reactStrictMode: true,
+const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
+
+module.exports = (phase) => {
+  if (phase === PHASE_DEVELOPMENT_SERVER) {
+    return {
+      env: {
+        url: "https://data.grobotics.co.nz"
+      },
+      reactStrictMode: true,
+      images: {
+        domains: ['data.grobotics.co.nz']
+      }
+    }
+  }
+  return {
+    env: {
+      url: "http://localhost/gRobotics"
+    },
+    reactStrictMode: true,
+    images: {
+      domains: ['localhost/gRobotics']
+    }
+  }
 }
