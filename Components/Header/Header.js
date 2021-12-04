@@ -1,16 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 import Logo from '../UI/Logo/Logo'
 import Navbar from './Navbar/Navbar'
 import Link from 'next/link'
+import ContactInfoContext from '../../store/contact-info-context'
 function Header() {
+    // contact context 
+    const contactInfoCtx = useContext(ContactInfoContext)
+    if (contactInfoCtx.contactData) {
+        console.log(contactInfoCtx.contactData.acf.logo)
+    }
     return (
         <Section>
 
             <Container>
-                {/* <Link href="/" passHref>
-                    <a> <LogoStyle /></a>
-                </Link> */}
+                <Link href="/" passHref>
+                    <a> <Logo /></a>
+                </Link>
 
                 <Navbar />
             </Container>

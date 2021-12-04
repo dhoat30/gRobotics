@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import ContactInfoContext from '../store/contact-info-context'
@@ -12,14 +12,16 @@ function Layout(props) {
     const loadingCtx = useContext(LoadingContext)
 
     useEffect(() => {
+        console.log("layout use effect")
         getContactInfo()
             .then(res => {
-                console.log(res)
+                if (res) {
+                    contactInfoCtx.getContactData(res[0])
+                }
             })
             .catch(err => {
                 console.log(err)
             })
-
     }, [])
 
     return (

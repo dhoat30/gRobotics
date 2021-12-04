@@ -26,19 +26,19 @@ function MyApp({ Component, pageProps }) {
   })
   return (
     <React.Fragment>
-
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Layout>
-          <Head>
-            <meta charSet="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-          </Head>
-          <Component {...pageProps} />
-          <LoadingOverlay show={showLoading} />
-        </Layout>
-      </ThemeProvider>
-
+      <ContactInfoContextProvider>
+        <GlobalStyle />
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <Head>
+              <meta charSet="utf-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+            </Head>
+            <Component {...pageProps} />
+            <LoadingOverlay show={showLoading} />
+          </Layout>
+        </ThemeProvider>
+      </ContactInfoContextProvider>
     </React.Fragment>
   )
 }
