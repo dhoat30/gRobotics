@@ -10,6 +10,8 @@
   --boxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
   --cardBorderRadius: 16px;
   --transition: 500ms ease-in-out;
+  --paragraphSize: 1rem;
+  --fontGrey: #707070;
 }
 body {
   margin: 0;

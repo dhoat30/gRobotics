@@ -18,7 +18,11 @@ function MenuLink({ title, link }) {
 
 export default MenuLink
 const List = styled.li`
-display: inline-block;
+    @media (max-width: 1000px){ 
+        border-bottom: 1px solid var(--lightGrey);
+        margin: 0 10px;
+      
+    }
 `
 const Anchor = styled.a`
 color: white;
@@ -27,4 +31,10 @@ cursor: pointer;
 &:hover{ 
     color: var(--lightGrey); 
 }
+@media (max-width: 1000px){ 
+       margin-left: 0;
+       padding: 10px 10px;
+       display: block;
+    }
+
 `

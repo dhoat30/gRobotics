@@ -6,13 +6,13 @@ import LoadingOverlay from './UI/LoadingOverlay/LoadingOverlay'
 import LoadingContext from '../store/loading-context'
 import Header from './Header/Header'
 import getContactInfo from '../util/get-contact-info'
+import Footer from './Footer/Footer'
 
 function Layout(props) {
     const contactInfoCtx = useContext(ContactInfoContext)
     const loadingCtx = useContext(LoadingContext)
 
     useEffect(() => {
-        console.log("layout use effect")
         getContactInfo()
             .then(res => {
                 if (res) {
@@ -30,6 +30,7 @@ function Layout(props) {
             <Main>{props.children}
                 <LoadingOverlay show={loadingCtx.loadingOverlay} />
             </Main>
+            <Footer />
         </div>
     )
 }

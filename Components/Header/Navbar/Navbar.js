@@ -49,7 +49,6 @@ function NavbarComponent() {
             key={item.link}
         />
     })
-    console.log(showMobileMenu)
     return (
         <NavbarStyle>
             <Link href="/" passHref>
@@ -61,16 +60,16 @@ function NavbarComponent() {
                 </a>
             </Link>
             <MenuContainer>
-                <ul>
+                <MenuListItems>
                     {menu}
-                </ul>
+                </MenuListItems>
             </MenuContainer>
 
             {showMobileMenu ?
                 <MobileMenuContainer>
-                    <ul>
+                    <MenuListItems>
                         {menu}
-                    </ul>
+                    </MenuListItems>
                 </MobileMenuContainer> : null
             }
             <IconStyle icon={showMobileMenu ? faTimes : faBars} onClick={() => setShowMobileMenu(showMobileMenu ? false : true)} />
@@ -85,11 +84,25 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
-
+   
 `
 const MenuContainer = styled.div`
 @media (max-width: 1000px){ 
-    display: none;
+    display: none !important;
+}
+`
+const MenuListItems = styled.ul`
+display: flex; 
+@media(max-width: 1000px ){ 
+    flex-direction: column; 
+    position: fixed; 
+    background: var(--darkGrey);
+    width: 100%;
+    top: 50px;
+    left: 0; 
+    bottom: 0;
+    height: 100vh;
+    z-index: 10;
 }
 `
 const MobileMenuContainer = styled.div`
@@ -99,4 +112,7 @@ const IconStyle = styled(FontAwesomeIcon)`
     color: white; 
     font-size: 2rem;
     cursor: pointer; 
+    @media (min-width: 1000px){ 
+        display: none; 
+    }
 `

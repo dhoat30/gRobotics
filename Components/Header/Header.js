@@ -15,9 +15,9 @@ function Header() {
 
 export default Header
 const Section = styled.section`
-border: solid red;
 background: var(--black);
 padding: 5px 0;
+height: 50px;
 `
 const Container = styled.section`
     max-width: 1650px; 
