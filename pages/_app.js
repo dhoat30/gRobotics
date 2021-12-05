@@ -8,7 +8,6 @@ import { ContactInfoContextProvider } from '../store/contact-info-context'
 import { HeroImageContextProvider } from '../store/hero-image-context';
 import { LoadingContextProvider } from '../store/loading-context'
 import Router from 'next/router'
-import LoadingOverlay from '../Components/UI/LoadingOverlay/LoadingOverlay';
 
 function MyApp({ Component, pageProps }) {
   const [showLoading, setShowLoading] = useState(false)
@@ -35,7 +34,6 @@ function MyApp({ Component, pageProps }) {
               <meta name="viewport" content="width=device-width, initial-scale=1" />
             </Head>
             <Component {...pageProps} />
-            <LoadingOverlay show={showLoading} />
           </Layout>
         </ThemeProvider>
       </ContactInfoContextProvider>
@@ -72,7 +70,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

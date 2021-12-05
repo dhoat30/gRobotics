@@ -8,7 +8,7 @@ module.exports = (phase) => {
       },
       reactStrictMode: true,
       images: {
-        domains: ['localhost/gRobotics/g-robotics-data']
+        domains: ['localhost']
       }
     }
   }
