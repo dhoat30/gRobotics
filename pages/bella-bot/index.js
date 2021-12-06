@@ -11,18 +11,19 @@ export default function Home(props) {
                 {/* add seo in here */}
                 <title>G Robotics | HolaBot</title>
             </Head>
-            <BellaBot robotData={props.bellaBot} />
+            {/* <BellaBot robotData={props.bellaBot} /> */}
+            <h1>still working on it </h1>
         </React.Fragment >
     )
 }
 
-export async function getStaticProps(context) {
-    // get home page data using category from hero images 
-    const services = await getRobot('bellabot')
-    return {
-        props: {
-            bellaBot: services[0]
-        },
-        revalidate: 10
-    }
-}
+// export async function getStaticProps(context) {
+//     // get home page data using category from hero images 
+//     const services = await getRobot('pudubot')
+//     return {
+//         props: {
+//             bellaBot: services[0]
+//         },
+//         revalidate: 10
+//     }
+// }
