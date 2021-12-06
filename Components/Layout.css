@@ -65,3 +65,44 @@ select {
 .left-align {
   text-align: left;
 }
+/* fonts global styles */
+h2 {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 4.8rem;
+}
+@media (max-width: 500px) {
+  h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
+h2 strong {
+  background-image: linear-gradient(
+    to right bottom,
+    #149c4f,
+    #00aa8e,
+    #00b3c7,
+    #00b7ee,
+    #72b7ff
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+}
+@media (max-width: 500px) {
+  h4 {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+}
+
+h4 strong {
+  color: var(--darkGrey);
+}

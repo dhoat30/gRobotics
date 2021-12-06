@@ -11,15 +11,12 @@ function LargeTitle(props) {
 }
 
 export default LargeTitle
-const Container = styled.h2`
-font-size: 4rem;
-font-weight: 700;
+const Container = styled.div`
+font-size: 6rem !important;
 margin: 10px 0;
 line-height: 5rem;
 color: ${props => props.color ? props.color : 'var(--darkGrey)'};
 text-align: ${props => props.align ? props.align : "left"};
-@media (max-width: 500px ){ 
-   font-size: 3rem;
-   line-height: 3rem;
-}
+
+
 `

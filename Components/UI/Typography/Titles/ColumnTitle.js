@@ -15,8 +15,8 @@ function ColumnTitle(props) {
 
 export default ColumnTitle
 
-const Container = styled.h3`
-    font-size: 1.5rem;
+const Container = styled.div`
+    font-size: 2rem;
     font-weight: ${props => props.fontWeight ? props.fontWeight : "600"};
     margin: 0;
     text-align: ${props => props.align ? props.align : "left"};

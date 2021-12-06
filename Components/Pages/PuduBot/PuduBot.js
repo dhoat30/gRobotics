@@ -1,9 +1,11 @@
 import React from 'react'
 import HeroImageText from '../../UI/Hero/HeroImageText'
 import styled from 'styled-components'
-import VideoText from '../../UI/VideoText/VideoText'
+import VideoText from '../../UI/Video/VideoText'
+import Video from '../../UI/Video/Video'
+import VerticleLayout from '../../UI/TextImageLayouts/VerticleLayout'
 function BellaBot({ robotData }) {
-    console.log(robotData)
+    console.log(robotData.acf.robot_flexible_content[2])
     if (!robotData) {
         return null
     }
@@ -21,7 +23,15 @@ function BellaBot({ robotData }) {
                 title={heroData[0].title}
                 subtitle={heroData[0].subtitle}
             />
-            <VideoText />
+            <Video
+                video={robotData.acf.robot_flexible_content[1].video}
+            />
+
+            <VerticleLayoutStyle
+                title={robotData.acf.robot_flexible_content[2].title}
+                content={robotData.acf.robot_flexible_content[2].content}
+                image={robotData.acf.robot_flexible_content[2].image}
+            />
         </Container>
 
     )
@@ -29,3 +39,6 @@ function BellaBot({ robotData }) {
 
 export default BellaBot
 const Container = styled.section``
+const VerticleLayoutStyle = styled(VerticleLayout)`
+padding-bottom: 0;
+`
