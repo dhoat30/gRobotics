@@ -20,7 +20,7 @@ padding: 5px 0;
 height: 50px;
 `
 const Container = styled.section`
-    max-width: 1650px; 
+    max-width: 1500px; 
     margin: 0 auto;
     padding: 0 10px;
 `

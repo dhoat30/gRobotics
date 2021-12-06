@@ -11,7 +11,7 @@ function LargeTitle(props) {
 }
 
 export default LargeTitle
-const Container = styled.h1`
+const Container = styled.h2`
 font-size: 4rem;
 font-weight: 700;
 margin: 10px 0;

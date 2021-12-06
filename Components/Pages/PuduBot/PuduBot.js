@@ -1,6 +1,7 @@
 import React from 'react'
 import HeroImageText from '../../UI/Hero/HeroImageText'
-
+import styled from 'styled-components'
+import VideoText from '../../UI/VideoText/VideoText'
 function BellaBot({ robotData }) {
     console.log(robotData)
     if (!robotData) {
@@ -20,9 +21,11 @@ function BellaBot({ robotData }) {
                 title={heroData[0].title}
                 subtitle={heroData[0].subtitle}
             />
+            <VideoText />
         </Container>
 
     )
 }
 
 export default BellaBot
+const Container = styled.section``
