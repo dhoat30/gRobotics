@@ -1,28 +1,101 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import LargeTitle from '../Typography/Titles/LargeTitle'
 import styled from 'styled-components'
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer'
 import ColumnTitle from '../Typography/Titles/ColumnTitle'
 import Image from 'next/image'
+
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { useAnimation } from 'framer-motion'
+
 function VerticleLayout({ title, content, image, className }) {
+    const sectionRef = useRef(null)
+    let imageItem = useRef(null)
+    let titleItem = useRef(null)
+    let contentItem = useRef(null)
+    const { ref, inView } = useInView({
+        threshold: 0.5
+    })
+    const animationTitle = useAnimation()
+    const animationContent = useAnimation()
+    const animationImage = useAnimation()
+
+    useEffect(() => {
+        if (inView) {
+            animationTitle.start({
+                y: 0,
+                opacity: 1,
+                transition: {
+                    ease: 'easeOut', duration: 1
+                }
+            })
+            animationContent.start({
+                y: 0,
+                opacity: 1,
+                transition: {
+                    ease: 'easeOut', duration: 1
+                }
+            })
+            animationImage.start({
+                y: 0,
+                opacity: 1,
+                transition: {
+                    ease: 'easeOut', duration: 1
+                }
+            })
+        }
+        if (!inView) {
+            animationTitle.start({
+                y: '50px',
+                opacity: 0,
+            })
+            animationContent.start({
+                y: '50px',
+                opacity: 0
+            })
+            animationImage.start({
+                y: '50px',
+                opacity: 0,
+                transition: {
+                    ease: 'easeOut', duration: 1
+                }
+            })
+        }
+    }, [inView])
+
     return (
-        <MaxWidthContainer backgroundColor="var(--silver)" >
-            <Container className={className}>
-                <LargeTitle align="center">{title}</LargeTitle>
-                <ColumnTitle align="center"
-                    color="var(--lightGrey)">
-                    {content}
-                </ColumnTitle>
-                <ImageContainer>
-                    <Image
-                        src={image}
-                        alt={content}
-                        width="100"
-                        height="100"
-                        layout="responsive"
-                        quality="100"
-                    />
-                </ImageContainer>
+        <MaxWidthContainer backgroundColor="var(--silver)" ref={ref}>
+            <Container className={className} >
+                <motion.div animate={animationTitle}>
+                    <LargeTitle
+                        ref={el => { titleItem = el }}
+                        align="center">{title}</LargeTitle>
+                </motion.div>
+
+                <motion.div animate={animationContent}>
+                    <ColumnTitle
+                        ref={el => { contentItem = el }}
+                        align="center"
+                        color="var(--lightGrey)">
+                        {content}
+                    </ColumnTitle>
+                </motion.div>
+
+                <motion.div animate={animationImage}>
+                    <ImageContainer
+                        className="image-animation"
+                        ref={el => { imageItem = el }}>
+                        <Image
+                            src={image}
+                            alt={content}
+                            width="100"
+                            height="100"
+                            layout="responsive"
+                            quality="100"
+                        />
+                    </ImageContainer>
+                </motion.div>
             </Container>
         </MaxWidthContainer>
 
@@ -40,4 +113,5 @@ const ImageContainer = styled.div`
 width: 100%;
 max-width: 700px;
 margin: 0 auto;
+overflow: hidden;
 `

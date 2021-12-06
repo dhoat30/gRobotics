@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-function MaxWidthContainer({ children, backgroundColor, className }) {
+const MaxWidthContainer = React.forwardRef(({ children, backgroundColor, className }, ref) => {
     return (
-        <Section backgroundColor={backgroundColor} className={className}>
+        <Section backgroundColor={backgroundColor} className={className} ref={ref}>
             <Container>
                 {children}
             </Container>
         </Section>
     )
-}
+})
 
 export default MaxWidthContainer
 

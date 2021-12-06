@@ -1,11 +1,12 @@
 import React from 'react'
 import HeroImageText from '../../UI/Hero/HeroImageText'
 import styled from 'styled-components'
-import VideoText from '../../UI/Video/VideoText'
 import Video from '../../UI/Video/Video'
 import VerticleLayout from '../../UI/TextImageLayouts/VerticleLayout'
+import VideoText from '../../UI/Video/VideoText'
+import HorizontalLayout from '../../UI/TextImageLayouts/HorizontalLayout'
 function BellaBot({ robotData }) {
-    console.log(robotData.acf.robot_flexible_content[2])
+    console.log(robotData.acf.robot_flexible_content[7])
     if (!robotData) {
         return null
     }
@@ -31,6 +32,27 @@ function BellaBot({ robotData }) {
                 title={robotData.acf.robot_flexible_content[2].title}
                 content={robotData.acf.robot_flexible_content[2].content}
                 image={robotData.acf.robot_flexible_content[2].image}
+            />
+            {/* <VerticleLayoutStyle
+                title={robotData.acf.robot_flexible_content[3].title}
+                content={robotData.acf.robot_flexible_content[3].content}
+                image={robotData.acf.robot_flexible_content[3].image}
+            /> */}
+            <VideoText
+                title={robotData.acf.robot_flexible_content[3].title}
+                content={robotData.acf.robot_flexible_content[3].video_content}
+                video={robotData.acf.robot_flexible_content[3].video}
+            />
+
+            <HorizontalLayout
+                title={robotData.acf.robot_flexible_content[6].title}
+                content={robotData.acf.robot_flexible_content[6].video_content}
+                video={robotData.acf.robot_flexible_content[6].video}
+            />
+            <HorizontalLayout
+                title={robotData.acf.robot_flexible_content[7].title}
+                content={robotData.acf.robot_flexible_content[7].content}
+                image={robotData.acf.robot_flexible_content[7].image}
             />
         </Container>
 

@@ -91,6 +91,22 @@ h2 strong {
   font-weight: 700;
 }
 
+h3 {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 4rem;
+}
+@media (max-width: 500px) {
+  h3 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+h3 strong {
+  color: var(--darkGrey);
+}
+
 h4 {
   font-size: 2rem;
   font-weight: 500;
@@ -105,4 +121,21 @@ h4 {
 
 h4 strong {
   color: var(--darkGrey);
+}
+
+h5 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+@media (max-width: 500px) {
+  h5 {
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+  }
+}
+
+h5 strong {
+  color: var(--darkGrey);
+  font-weight: 500;
 }

@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function ColumnTitle(props) {
+const ColumnTitle = React.forwardRef((props, ref) => {
     return (
         <Container
+            ref={ref}
             color={props.color}
             dangerouslySetInnerHTML={{ __html: props.children }}
             fontWeight={props.fontWeight}
@@ -11,8 +12,7 @@ function ColumnTitle(props) {
             align={props.align}>
         </Container>
     )
-}
-
+})
 export default ColumnTitle
 
 const Container = styled.div`
