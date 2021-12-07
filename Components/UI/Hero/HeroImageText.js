@@ -4,21 +4,24 @@ import ExtraLargeTitle from '../Typography/Titles/ExtraLargeTitle'
 import LargeTitle from '../Typography/Titles/LargeTitle'
 import Subtitle from '../Typography/Titles/Subtitle'
 import Image from 'next/image'
-function HeroImageText({ image, title, subtitle }) {
+import ColumnTitle from '../Typography/Titles/ColumnTitle'
+function HeroImageText({ image, title, subtitle, imageWidth, imageHeight, backgroundColor, color }) {
 
     return (
-        <Container>
+        <Container backgroundColor={backgroundColor}>
             <MaxWidth>
                 <Content>
-                    <ExtraLargeTitle>{title}</ExtraLargeTitle>
-                    <SubtitleStyle>{subtitle}</SubtitleStyle>
+                    <ExtraLargeTitle color={color}>{title}</ExtraLargeTitle>
+                    <ColumnTitleSytle color={color}>{subtitle}</ColumnTitleSytle>
                 </Content>
                 <ImageContainer>
                     <ImageStyle
                         src={image}
                         layout="responsive"
-                        height="100"
-                        width="100"
+                        height={imageHeight ? imageHeight : "100"}
+                        width={imageWidth ? imageWidth : '100'}
+                        quality={100}
+                        alt={title}
                     />
                 </ImageContainer>
             </MaxWidth>
@@ -28,10 +31,10 @@ function HeroImageText({ image, title, subtitle }) {
 
 export default HeroImageText
 const Container = styled.div`
- background-color: var(--silver);
+ background-color: ${props => props.backgroundColor ? props.backgroundColor : "var(--darkGrey)"};
 `
 const MaxWidth = styled.div`
-    max-width: 1500px; 
+max-width: 1500px; 
  margin: 0 auto;
 padding: 0 10px;
 display: flex;
@@ -53,16 +56,17 @@ max-height: 700px;
 @media (max-width: 450px){ 
     height: auto;
     max-height: 1200px;
-    padding: 50px 10px;
+    padding: 50px 10px 0 10px;
 }
 `
-const SubtitleStyle = styled(Subtitle)`
+const ColumnTitleSytle = styled(ColumnTitle)`
 margin-top: 25px;
 `
 const Content = styled.div`
 `
 
 const ImageContainer = styled.div`
+display: block;
     height: 90%;
     width: 600px;
     /* position: relative; */
@@ -74,7 +78,9 @@ const ImageContainer = styled.div`
     max-width: 700px;
         margin-top: 20px;
 }
+overflow: hidden;
 `
 const ImageStyle = styled(Image)`
-
+object-fit: cover;
+object-position: top;
 `

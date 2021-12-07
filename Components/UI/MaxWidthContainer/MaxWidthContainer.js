@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-const MaxWidthContainer = React.forwardRef(({ children, backgroundColor, className }, ref) => {
+function MaxWidthContainer({ children, backgroundColor, className }, ref) {
     return (
         <Section backgroundColor={backgroundColor} className={className} ref={ref}>
             <Container>
@@ -8,12 +8,13 @@ const MaxWidthContainer = React.forwardRef(({ children, backgroundColor, classNa
             </Container>
         </Section>
     )
-})
+}
 
 export default MaxWidthContainer
 
 const Section = styled.section`
 background: ${props => props.backgroundColor ? props.backgroundColor : "var(--darkGrey)"};
+position: relative;
 `
 
 const Container = styled.div`

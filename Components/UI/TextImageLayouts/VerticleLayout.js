@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useAnimation } from 'framer-motion'
 
-function VerticleLayout({ title, content, image, className }) {
+function VerticleLayout({ title, content, image, video, className, theme, backgroundColor }) {
     const sectionRef = useRef(null)
     let imageItem = useRef(null)
     let titleItem = useRef(null)
@@ -65,37 +65,42 @@ function VerticleLayout({ title, content, image, className }) {
     }, [inView])
 
     return (
-        <MaxWidthContainer backgroundColor="var(--silver)" ref={ref}>
+        <MaxWidthContainer backgroundColor={backgroundColor} ref={ref}>
             <Container className={className} >
-                <motion.div animate={animationTitle}>
+                <motion.div >
                     <LargeTitle
-                        ref={el => { titleItem = el }}
+                        theme={theme}
+                        color={theme === 'dark' ? 'var(--offWhite)' : "var(--darkGrey)"}
                         align="center">{title}</LargeTitle>
                 </motion.div>
 
-                <motion.div animate={animationContent}>
+                <motion.div >
                     <ColumnTitle
-                        ref={el => { contentItem = el }}
+                        theme={theme}
                         align="center"
                         color="var(--lightGrey)">
                         {content}
                     </ColumnTitle>
                 </motion.div>
+                {image &&
+                    <motion.div>
+                        <ImageContainer
+                            className="image-animation"
+                            ref={el => { imageItem = el }}>
+                            <Image
+                                src={image}
+                                alt={content}
+                                width="100"
+                                height="100"
+                                layout="responsive"
+                                quality="100"
+                            />
+                        </ImageContainer>
+                    </motion.div>
+                }
 
-                <motion.div animate={animationImage}>
-                    <ImageContainer
-                        className="image-animation"
-                        ref={el => { imageItem = el }}>
-                        <Image
-                            src={image}
-                            alt={content}
-                            width="100"
-                            height="100"
-                            layout="responsive"
-                            quality="100"
-                        />
-                    </ImageContainer>
-                </motion.div>
+                <Video dangerouslySetInnerHTML={{ __html: video }}>
+                </Video>
             </Container>
         </MaxWidthContainer>
 
@@ -114,4 +119,7 @@ width: 100%;
 max-width: 700px;
 margin: 0 auto;
 overflow: hidden;
+`
+const Video = styled.div`
+margin-top: 50px;
 `

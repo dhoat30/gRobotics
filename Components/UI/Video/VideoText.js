@@ -3,14 +3,16 @@ import LargeTitle from '../Typography/Titles/LargeTitle'
 import styled from 'styled-components'
 import ColumnTitle from '../Typography/Titles/ColumnTitle'
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer'
-function VideoText({ video, title, content }) {
+function VideoText({ video, title, content, backgroundColor, theme }) {
     return (
-        <MaxWidthContainer backgroundColor="var(--silver)">
+        <MaxWidthContainer backgroundColor={backgroundColor}>
             <Container>
-                <LargeTitle align="center">{title}</LargeTitle>
+                {title && <LargeTitle align="center">{title}</LargeTitle>}
                 <ColumnTitle
+                    theme={theme}
                     color="var(--lightGrey)"
                     align="center">{content}</ColumnTitle>
+                <Margin />
                 <Video dangerouslySetInnerHTML={{ __html: video }}>
                 </Video>
             </Container>
@@ -22,8 +24,10 @@ export default VideoText
 const Container = styled.section`
 padding: 100px 0 100px 0;
 max-width: 1000px; 
-margin: 20px auto 0 auto;
+margin: 0 auto 0 auto;
 `
 const Video = styled.div`
- margin-top: 50px;
+`
+const Margin = styled.div`
+margin-top: 50px;
 `

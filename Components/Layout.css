@@ -1,6 +1,7 @@
 :root {
   --black: rgba(0, 0, 0, 1);
   --green: #129b4c;
+  --darkGreen: #086d32;
   --offWhite: #f9f9f9;
   --silver: #f5f7fa;
   --lightGrey: #727272;
@@ -104,7 +105,16 @@ h3 {
 }
 
 h3 strong {
-  color: var(--darkGrey);
+  background-image: linear-gradient(
+    to right bottom,
+    #149c4f,
+    #00aa8e,
+    #00b3c7,
+    #00b7ee,
+    #72b7ff
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h4 {
@@ -138,4 +148,7 @@ h5 {
 h5 strong {
   color: var(--darkGrey);
   font-weight: 500;
+}
+.light-strong-color strong {
+  color: white !important;
 }

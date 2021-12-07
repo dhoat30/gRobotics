@@ -14,11 +14,11 @@ module.exports = (phase) => {
   }
   return {
     env: {
-      url: "http://localhost/gRobotics/g-robotics-data"
+      url: "https://data.grobotics.co.nz"
     },
     reactStrictMode: true,
     images: {
-      domains: ['localhost/gRobotics/g-robotics-data']
+      domains: ['data.grobotics.co.nz']
     }
   }
 }

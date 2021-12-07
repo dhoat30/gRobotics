@@ -39,7 +39,6 @@ padding: 100px 0;
 display: flex;
 align-items: center;
 justify-content: space-between;
-border: solid red;
 @media (max-width: 1000px ){ 
    flex-direction: column;
    padding: 50px 0;
