@@ -8,7 +8,6 @@ function Logo({ className, logo }) {
         <Container className={className}>
             <ImageStyle
                 src={logo}
-
                 layout="fill"
                 alt="G Robotics Logo"
             />
@@ -19,7 +18,7 @@ function Logo({ className, logo }) {
 export default Logo
 
 const Container = styled.div`
-width: 210px;
+width: 230px;
 height: 40px;
 position: relative;
 `

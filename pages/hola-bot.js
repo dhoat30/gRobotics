@@ -2,6 +2,7 @@ import Head from 'next/head'
 import React, { useContext, useEffect } from 'react'
 import getRobot from '../util/get-robot'
 import PuduBot from '../Components/Pages/PuduBot/PuduBot'
+import HolaBot from '../Components/Pages/HolaBot/HolaBot'
 export default function PuduBotPage(props) {
     return (
         < React.Fragment >
@@ -9,8 +10,7 @@ export default function PuduBotPage(props) {
                 {/* add seo in here */}
                 <title>G Robotics | HolaBot</title>
             </Head>
-            <h1>Coming Soon </h1>
-            {/* <PuduBot robotData={props.robotData} /> */}
+            <HolaBot robotData={props.robotData} />
         </React.Fragment >
     )
 }

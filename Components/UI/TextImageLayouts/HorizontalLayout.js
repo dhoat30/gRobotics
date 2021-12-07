@@ -9,7 +9,7 @@ function HorizontalLayout({ title, content, image, video }) {
         <MaxWidthContainer backgroundColor='var(--offWhite)'>
             <Container>
                 <ContentContainer>
-                    <RowTitle align="center" color="var(--darkGrey)">{title}</RowTitle>
+                    <RowTitle color="var(--darkGrey)">{title}</RowTitle>
                     <Subtitle color="var(--fontGrey)">{content}</Subtitle>
                 </ContentContainer>
                 {video ?

@@ -1,13 +1,11 @@
 import React, { useRef, useEffect } from 'react'
-import LargeTitle from '../Typography/Titles/LargeTitle'
+import LargeTitle from '../../../UI/Typography/Titles/LargeTitle'
 import styled from 'styled-components'
-import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer'
-import ColumnTitle from '../Typography/Titles/ColumnTitle'
+import MaxWidthContainer from '../../../UI/MaxWidthContainer/MaxWidthContainer'
+import Subtitle from '../../../UI/Typography/Titles/Subtitle'
 import Image from 'next/image'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { useAnimation } from 'framer-motion'
+
 
 function VerticleLayout({ title, content, image, video, className, theme, backgroundColor }) {
     // const sectionRef = useRef(null)
@@ -67,35 +65,35 @@ function VerticleLayout({ title, content, image, video, className, theme, backgr
     return (
         <MaxWidthContainer backgroundColor={backgroundColor} >
             <Container className={className} >
-                <motion.div >
+                <div >
                     <LargeTitle
                         theme={theme}
                         color={theme === 'dark' ? 'var(--offWhite)' : "var(--darkGrey)"}
                         align="center">{title}</LargeTitle>
-                </motion.div>
+                </div>
 
-                <motion.div >
-                    <ColumnTitle
+                <div >
+                    <Subtitle
                         theme={theme}
                         align="center"
                         color="var(--lightGrey)">
                         {content}
-                    </ColumnTitle>
-                </motion.div>
+                    </Subtitle>
+                </div>
                 {image &&
-                    <motion.div>
+                    <div>
                         <ImageContainer
                             className="image-animation">
                             <Image
                                 src={image}
                                 alt={content}
                                 width="100"
-                                height="100"
+                                height="160"
                                 layout="responsive"
                                 quality="100"
                             />
                         </ImageContainer>
-                    </motion.div>
+                    </div>
                 }
 
                 <Video dangerouslySetInnerHTML={{ __html: video }}>

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-function MaxWidthContainer({ children, backgroundColor, className }, ref) {
+function MaxWidthContainer({ children, backgroundColor, className }) {
     return (
-        <Section backgroundColor={backgroundColor} className={className} ref={ref}>
+        <Section backgroundColor={backgroundColor} className={className}>
             <Container>
                 {children}
             </Container>
