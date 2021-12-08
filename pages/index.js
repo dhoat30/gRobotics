@@ -16,6 +16,9 @@ export default function Home(props) {
       </Head>
       <HomePage
         kettyBot={props.kettyBot}
+        bellaBot={props.bellaBot}
+        puduBot={props.puduBot}
+        holaBot={props.holaBot}
       />
     </React.Fragment >
   )
@@ -25,11 +28,16 @@ export async function getServerSideProps(context) {
   // get home page data using category from hero images 
   // const homePage = await getPage('home-page')
   const kettyBot = await getHomeRobot('kettybot')
-
+  const bellaBot = await getHomeRobot('bellabot')
+  const puduBot = await getHomeRobot('pudubot')
+  const holaBot = await getHomeRobot('holabot')
   return {
     props: {
       // homePage: homePage[0],
-      kettyBot: kettyBot[0]
+      kettyBot: kettyBot[0],
+      bellaBot: bellaBot[0],
+      puduBot: puduBot[0],
+      holaBot: holaBot[0]
     }
   }
 

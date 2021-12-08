@@ -8,6 +8,7 @@ import HorizontalLayout from '../../UI/TextImageLayouts/HorizontalLayout'
 import LeaseLayout from '../../UI/LeaseLayout/LeaseLayout'
 import Capacity from './Capacity/Capacity'
 function HolaBot({ robotData }) {
+    console.log(robotData)
     if (!robotData) {
         return null
     }

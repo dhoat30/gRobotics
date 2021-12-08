@@ -5,17 +5,15 @@ import Image from 'next/image'
 import ColumnTitle from '../../../UI/Typography/Titles/ColumnTitle'
 import Link from 'next/link'
 import AnchorButton from '../../../UI/Buttons/AnchorButton'
-function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgroundColor, color }) {
-    console.log(image)
+function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgroundColor, color, theme }) {
+    console.log(theme)
     return (
         <Container backgroundColor={backgroundColor}>
             <MaxWidth>
                 <Content>
                     <ExtraLargeTitle align="center" color={color}>{title}</ExtraLargeTitle>
                     <ColumnTitleSytle align="center" color={color}>{subtitle}</ColumnTitleSytle>
-                    <Link href="/kettybot" passHref>
-                        <AnchorButton align="center">Learn More</AnchorButton>
-                    </Link>
+                    <Link href="/kettybot" passHref><AnchorButton align="center">Learn More</AnchorButton></Link>
                 </Content>
                 <ImageContainer>
                     <Image src={image}

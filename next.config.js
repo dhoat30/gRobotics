@@ -4,11 +4,11 @@ module.exports = (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
       env: {
-        url: "http://localhost/gRobotics/g-robotics-data"
+        url: "https://data.grobotics.co.nz"
       },
       reactStrictMode: true,
       images: {
-        domains: ['localhost']
+        domains: ['data.grobotics.co.nz']
       }
     }
   }

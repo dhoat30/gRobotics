@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function ExtraLargeTitle({ children, align, color, className }) {
+function ExtraLargeTitle({ children, align, color, className, theme }) {
     return (
         <Container
             dangerouslySetInnerHTML={{ __html: children }}
