@@ -29,7 +29,6 @@ function HorizontalLayout({ title, content, image, video }) {
                 }
             </Container>
         </MaxWidthContainer>
-
     )
 }
 
