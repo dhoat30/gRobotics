@@ -9,6 +9,9 @@ import LeaseLayout from '../../UI/LeaseLayout/LeaseLayout'
 import HeroSection from './HeroSection/HeroSection'
 import BotCards from './BotCards/BotCards'
 import MaxWidthContainer from '../../UI/MaxWidthContainer/MaxWidthContainer'
+import ContactForm from '../../UI/ContactForm/ContactForm'
+import RowTitle from '../../UI/Typography/Titles/RowTitle'
+import ContactSection from './ContactSection/ContactSection'
 function HomePage({ kettyBot, bellaBot, puduBot, holaBot }) {
     console.log(kettyBot.acf)
     console.log(bellaBot.acf)
@@ -16,6 +19,7 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot }) {
     return (
 
         <Container>
+
             <HeroSection
                 image={kettyBot.acf.image}
                 title={kettyBot.acf.title}
@@ -51,6 +55,10 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot }) {
                 imageHeight="100"
                 imageWidth="100"
                 color="var(--offWhite)"
+            />
+
+            <ContactSection
+                title="Get A Quote"
             />
         </Container>
 

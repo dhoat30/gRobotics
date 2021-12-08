@@ -18,7 +18,7 @@ position: relative;
 `
 
 const Container = styled.div`
-max-width: 1650px;
+max-width: 1500px;
 margin: 0 auto;
 padding: 0 10px;
 `

@@ -2,6 +2,7 @@
   --black: rgba(0, 0, 0, 1);
   --green: #129b4c;
   --darkGreen: #086d32;
+  --borderColor: #e0e0e0;
   --offWhite: #f9f9f9;
   --silver: #f5f7fa;
   --lightGrey: #727272;
@@ -151,4 +152,9 @@ h5 strong {
 }
 .light-strong-color strong {
   color: white !important;
+}
+
+/* accordion */
+.accordion h2 {
+  line-height: 1rem;
 }

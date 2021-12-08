@@ -37,6 +37,6 @@ function Layout(props) {
 
 export default Layout
 const Main = styled.section`
-min-height: 90vh;
+min-height: 100%;
 position: relative;
 `

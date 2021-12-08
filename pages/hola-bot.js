@@ -24,6 +24,6 @@ export async function getStaticProps(context) {
         props: {
             robotData: services[0]
         },
-        revalidate: 10
+        revalidate: 86400
     }
 }

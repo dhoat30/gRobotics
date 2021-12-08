@@ -26,6 +26,6 @@ export async function getStaticProps(context) {
             robotData: services[0],
             kettyBot: kettyBot[0]
         },
-        revalidate: 10
+        revalidate: 86400
     }
 }
