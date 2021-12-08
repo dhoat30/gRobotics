@@ -4,6 +4,7 @@ import getRobot from '../util/get-robot'
 import PuduBot from '../Components/Pages/PuduBot/PuduBot'
 import HolaBot from '../Components/Pages/HolaBot/HolaBot'
 export default function PuduBotPage(props) {
+    console.log(props)
     return (
         < React.Fragment >
             <Head>
@@ -18,6 +19,7 @@ export default function PuduBotPage(props) {
 export async function getStaticProps(context) {
     // get home page data using category from hero images 
     const services = await getRobot('holabot')
+
     return {
         props: {
             robotData: services[0]
