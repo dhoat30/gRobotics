@@ -19,7 +19,7 @@ function HomePage({ kettyBot }) {
                 image={kettyBot.acf.image}
                 title={kettyBot.acf.title}
                 subtitle={kettyBot.acf.subtitle}
-                backgroundColor="var(--silver)"
+                backgroundColor="#FBFBFC"
                 flex="column"
                 imageHeight="100"
                 imageWidth="100"

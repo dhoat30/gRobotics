@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import ExtraLargeTitle from '../../../UI/Typography/Titles/ExtraLargeTitle'
 import Image from 'next/image'
 import ColumnTitle from '../../../UI/Typography/Titles/ColumnTitle'
-
+import Link from 'next/link'
+import AnchorButton from '../../../UI/Buttons/AnchorButton'
 function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgroundColor, color }) {
     console.log(image)
     return (
@@ -12,10 +13,15 @@ function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgrou
                 <Content>
                     <ExtraLargeTitle align="center" color={color}>{title}</ExtraLargeTitle>
                     <ColumnTitleSytle align="center" color={color}>{subtitle}</ColumnTitleSytle>
+                    <Link href="/kettybot" passHref>
+                        <AnchorButton align="center">Learn More</AnchorButton>
+                    </Link>
                 </Content>
                 <ImageContainer>
                     <Image src={image}
-                        layout="fill"
+                        layout="responsive"
+                        width="100"
+                        height="100"
                     />
                 </ImageContainer>
             </MaxWidth>
@@ -28,33 +34,11 @@ const Container = styled.div`
  background-color: ${props => props.backgroundColor ? props.backgroundColor : "var(--darkGrey)"};
 `
 const MaxWidth = styled.div`
-max-width: 1500px; 
- margin: 0 auto;
-padding: 0 10px;
-display: flex;
-flex-direction: column;
-align-items: center;
-height: 100vh;
-max-height: 700px;
-@media (max-width: 1200px){ 
-    height: 140vh;
-    max-height: 1200px;
-    flex-direction: column;
-   align-items: center;
-   justify-content: center;
-}
-@media (max-width: 600px){ 
-    height: 100vh;
-    max-height: 1200px;
-}
-@media (max-width: 450px){ 
-    height: auto;
-    max-height: 1200px;
-    padding: 50px 10px 0 10px;
-}
+padding: 50px 0;
 `
 const ColumnTitleSytle = styled(ColumnTitle)`
-margin-top: 25px;
+margin-top: 40px;
+
 `
 const Content = styled.div`
 `
@@ -64,7 +48,7 @@ display: block;
     height: 90%;
     width: 600px;
     /* position: relative; */
-    align-self: flex-end;
+    margin: 20px auto 0 auto;
     @media (max-width: 1200px){ 
     align-self: center;
     height: auto;
