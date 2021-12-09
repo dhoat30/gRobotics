@@ -72,6 +72,8 @@ left: 0;
 height: 100px;
 bottom: 0;
 z-index: 1; 
+-webkit-animation: loop 20s linear infinite;
+ animation: loop 20s linear infinite; 
 @media (max-width: 600px){ 
     height: 70px;
     width: 200%;

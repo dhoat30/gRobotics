@@ -96,6 +96,7 @@ const ImageSection = styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
+margin: 50px 0 0 0;
 `
 const SubtitleStyle = styled(Subtitle)`
 margin-top: 20px;

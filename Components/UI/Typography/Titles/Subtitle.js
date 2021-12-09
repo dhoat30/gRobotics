@@ -1,18 +1,47 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 function MediumTitle({ children, align, color, className, fontWeight }) {
-    // const lower = props.children.toLowerCase();
-    // let text = lower.charAt(0).toUpperCase() + lower.slice(1);
+    const { ref, inView } = useInView()
+    const animation = useAnimation()
+
+    useEffect(() => {
+        if (inView) {
+            animation.start({
+                y: 0,
+                opacity: 1,
+                transition: {
+                    duration: 0.5,
+                    delay: 0.6
+                }
+            })
+        }
+
+    }, [inView])
+
+    const variants = {
+        hidden: {
+            y: 100,
+            opacity: 0
+        }
+    }
+
     return (
-        <Container
-            color={color}
-            dangerouslySetInnerHTML={{ __html: children }}
-            fontWeight={fontWeight}
-            className={className}
-            align={align}
+        <motion.div ref={ref}
+            variants={variants}
+            animate={animation}
+            initial="hidden"
         >
-        </Container>
+            <Container
+                color={color}
+                dangerouslySetInnerHTML={{ __html: children }}
+                fontWeight={fontWeight}
+                className={className}
+                align={align}
+            >
+            </Container>
+        </motion.div>
     )
 }
 

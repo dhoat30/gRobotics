@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import ExtraLargeTitle from '../Typography/Titles/ExtraLargeTitle'
 import LargeTitle from '../Typography/Titles/LargeTitle'
 import Subtitle from '../Typography/Titles/Subtitle'
 import Image from 'next/image'
 import ColumnTitle from '../Typography/Titles/ColumnTitle'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 function HeroImageText({ image, title, subtitle, imageWidth, imageHeight, backgroundColor, color }) {
+    const { ref, inView } = useInView()
+    const imageAnimation = useAnimation()
+
+    useEffect(() => {
+        if (inView) {
+
+            imageAnimation.start({
+                opacity: 1,
+                transition: {
+                    duration: 3,
+                    delay: 0.9
+                }
+            })
+        }
+
+    }, [inView])
+
 
     return (
         <Container backgroundColor={backgroundColor}>
@@ -14,16 +33,24 @@ function HeroImageText({ image, title, subtitle, imageWidth, imageHeight, backgr
                     <ExtraLargeTitle color={color}>{title}</ExtraLargeTitle>
                     <ColumnTitleSytle color={color}>{subtitle}</ColumnTitleSytle>
                 </Content>
+
                 <ImageContainer>
-                    <ImageStyle
-                        src={image}
-                        layout="responsive"
-                        height={imageHeight ? imageHeight : "100"}
-                        width={imageWidth ? imageWidth : '100'}
-                        quality={100}
-                        alt={title}
-                    />
+                    <motion.div ref={ref}
+
+                        animate={imageAnimation}
+                        initial={{ opacity: 0 }}
+                    >
+                        <ImageStyle
+                            src={image}
+                            layout="responsive"
+                            height={imageHeight ? imageHeight : "100"}
+                            width={imageWidth ? imageWidth : '100'}
+                            quality={100}
+                            alt={title}
+                        />
+                    </motion.div>
                 </ImageContainer>
+
             </MaxWidth>
         </Container>
     )

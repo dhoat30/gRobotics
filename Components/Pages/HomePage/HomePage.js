@@ -31,6 +31,7 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot }) {
             />
             {/* <img src={robotData.kettyBot.acf.robot_flexible_content[0].desktop_image} width="50%" /> */}
             <MaxWidthContainer backgroundColor="var(--silver)">
+
                 <Flex>
                     <BotCards
                         title={bellaBot.acf.title}

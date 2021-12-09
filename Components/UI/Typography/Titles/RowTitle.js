@@ -1,9 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+
 function SectionTitle(props) {
-    console.log(props.theme)
+    const { ref, inView } = useInView()
+    const animation = useAnimation()
+
+    useEffect(() => {
+        if (inView) {
+            animation.start({
+                y: 0,
+                opacity: 1,
+                transition: {
+                    duration: 1
+                }
+            })
+        }
+
+    }, [inView])
+
+    const variants = {
+        hidden: {
+            y: 100,
+            opacity: 0
+        }
+    }
     return (
-        <React.Fragment>
+        <motion.div ref={ref}
+            variants={variants}
+            animate={animation}
+            initial="hidden"
+        >
             <Container
                 align={props.align}
                 fontWeight={props.fontWeight}
@@ -13,7 +41,7 @@ function SectionTitle(props) {
                 className={props.className}>
             </Container>
 
-        </React.Fragment>
+        </motion.div>
     )
 }
 
