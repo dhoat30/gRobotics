@@ -24,7 +24,7 @@ export default function Home(props) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   // get home page data using category from hero images 
   // const homePage = await getPage('home-page')
   const kettyBot = await getHomeRobot('kettybot')
@@ -38,7 +38,8 @@ export async function getServerSideProps(context) {
       bellaBot: bellaBot[0],
       puduBot: puduBot[0],
       holaBot: holaBot[0]
-    }
+    },
+    revalidate: 86400
   }
 
 }
