@@ -8,34 +8,36 @@ import { ContactInfoContextProvider } from '../store/contact-info-context'
 import { HeroImageContextProvider } from '../store/hero-image-context';
 import { LoadingContextProvider } from '../store/loading-context'
 import Router from 'next/router'
+import LoadingOverlay from '../Components/UI/LoadingOverlay/LoadingOverlay';
 
 function MyApp({ Component, pageProps }) {
   const [showLoading, setShowLoading] = useState(false)
 
   // show loading overlay
   Router.events.on('routeChangeStart', (url) => {
-    console.log(url)
     setShowLoading(true)
   })
 
   // hide  loading overlay 
   Router.events.on('routeChangeComplete', (url) => {
-    console.log(url)
     setShowLoading(false)
   })
   return (
     <React.Fragment>
       <ContactInfoContextProvider>
-        <GlobalStyle />
-        <ThemeProvider theme={theme}>
-          <Layout>
-            <Head>
-              <meta charSet="utf-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1" />
-            </Head>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeProvider>
+        <LoadingContextProvider>
+          <GlobalStyle />
+          <ThemeProvider theme={theme}>
+            <Layout>
+              <Head>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+              </Head>
+              <Component {...pageProps} />
+              <LoadingOverlay show={showLoading} />
+            </Layout>
+          </ThemeProvider>
+        </LoadingContextProvider>
       </ContactInfoContextProvider>
     </React.Fragment>
   )
