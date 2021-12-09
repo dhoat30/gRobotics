@@ -2,7 +2,7 @@ import React from 'react'
 
 function Video({ video }) {
     return (
-        <div>
+        <div className="just-video">
             <div
                 dangerouslySetInnerHTML={{ __html: video }}
             ></div>
