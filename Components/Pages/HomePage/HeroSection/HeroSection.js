@@ -7,7 +7,7 @@ import Link from 'next/link'
 import AnchorButton from '../../../UI/Buttons/AnchorButton'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgroundColor, color, theme }) {
+function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgroundColor, color, theme, showLink }) {
     const { ref, inView } = useInView()
     const animation = useAnimation()
     const imageAnimation = useAnimation()
@@ -46,14 +46,15 @@ function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgrou
                     <ExtraLargeTitle align="center" color={color}>{title}</ExtraLargeTitle>
 
                     <ColumnTitleSytle align="center" color={color}>{subtitle}</ColumnTitleSytle>
-
-                    <motion.div ref={ref}
-                        variants={variants}
-                        animate={animation}
-                        initial="hidden"
-                    >
-                        <Link href="/kettybot" passHref><AnchorButton align="center">Learn More</AnchorButton></Link>
-                    </motion.div>
+                    {showLink &&
+                        <motion.div ref={ref}
+                            variants={variants}
+                            animate={animation}
+                            initial="hidden"
+                        >
+                            <Link href="/kettybot" passHref><AnchorButton align="center">Learn More</AnchorButton></Link>
+                        </motion.div>
+                    }
                 </Content>
 
                 <motion.div ref={ref}

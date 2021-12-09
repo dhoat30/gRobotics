@@ -40,14 +40,16 @@ function HeroImageText({ image, title, subtitle, imageWidth, imageHeight, backgr
                         animate={imageAnimation}
                         initial={{ opacity: 0 }}
                     >
-                        <ImageStyle
-                            src={image}
-                            layout="responsive"
-                            height={imageHeight ? imageHeight : "100"}
-                            width={imageWidth ? imageWidth : '100'}
-                            quality={100}
-                            alt={title}
-                        />
+                        {image &&
+                            <ImageStyle
+                                src={image}
+                                layout="responsive"
+                                height={imageHeight ? imageHeight : "100"}
+                                width={imageWidth ? imageWidth : '100'}
+                                quality={100}
+                                alt={title}
+                            />
+                        }
                     </motion.div>
                 </ImageContainer>
 

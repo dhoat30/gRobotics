@@ -3,38 +3,32 @@ import HeroImageText from '../../UI/Hero/HeroImageText'
 import styled from 'styled-components'
 import Video from '../../UI/Video/Video'
 import VerticleLayout from '../../UI/TextImageLayouts/VerticleLayout'
-import VideoText from '../../UI/Video/VideoText'
-import HorizontalLayout from '../../UI/TextImageLayouts/HorizontalLayout'
-import LeaseLayout from '../../UI/LeaseLayout/LeaseLayout'
-import HeroSection from './HeroSection/HeroSection'
-import BotCards from './BotCards/BotCards'
-import MaxWidthContainer from '../../UI/MaxWidthContainer/MaxWidthContainer'
-import ContactForm from '../../UI/ContactForm/ContactForm'
-import RowTitle from '../../UI/Typography/Titles/RowTitle'
-import ContactSection from './ContactSection/ContactSection'
-function HomePage({ robotData }) {
-    console.log(robotData)
-
+import HeroSection from '../HomePage/HeroSection/HeroSection'
+function KettyBot({ robotData }) {
+    console.log(robotData.acf.robot_flexible_content)
+    const kettyBot = robotData.acf.robot_flexible_content
     return (
 
         <Container>
-            {/* 
             <HeroSection
-                image={kettyBot.acf.image}
-                title={kettyBot.acf.title}
-                subtitle={kettyBot.acf.subtitle}
+                title={kettyBot[0].title}
+                subtitle={kettyBot[0].subtitle}
+                image={kettyBot[0].desktop_image}
                 backgroundColor="#FBFBFC"
                 flex="column"
                 imageHeight="100"
                 imageWidth="100"
+                showLink={false}
             />
-          */}
+            <Video
+                video={kettyBot[1].video}
+            />
         </Container>
 
     )
 }
 
-export default HomePage
+export default KettyBot
 const Container = styled.section``
 const VerticleLayoutStyle = styled(VerticleLayout)`
 padding-bottom: 0;
