@@ -11,6 +11,8 @@ function ContactPage({ faq }) {
             <Container>
                 <ContactSection
                     title="Contact Us"
+                    emailTo="info@grobotics.co.nz"
+                    emailRouteUrl="https://greensrobotics.co.nz/wp-json/webduel/v1/contact-email"
                 />
             </Container>
             {faq.length === 0 ? null :
@@ -19,8 +21,6 @@ function ContactPage({ faq }) {
                     <AccordionComponent faq={faq} />
                 </FAQSection>
             }
-
-
         </MaxWidthContainer>
     )
 }

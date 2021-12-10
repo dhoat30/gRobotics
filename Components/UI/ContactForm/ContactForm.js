@@ -6,8 +6,10 @@ import PrimaryButton from '../Buttons/PrimaryButton'
 import Errors from '../Notifications/Errors/Errors'
 import LoadingOverlay from '../LoadingOverlay/LoadingOverlay'
 import Select from '../Input/Select'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/pro-duotone-svg-icons'
 
-function ContactForm({ title, emailTo, emailRouteUrl, cancelPass }) {
+function ContactForm({ emailTo, emailRouteUrl, cancelPass }) {
     const [enteredName, setEnteredName] = useState('')
     const [enteredNameTouched, setEnteredNameTouched] = useState(false)
 
@@ -25,10 +27,11 @@ function ContactForm({ title, emailTo, emailRouteUrl, cancelPass }) {
 
     const [showLoading, setShowLoading] = useState('')
 
-    // submission message
-    const [successMessage, setSuccessMessage] = useState('')
-    const [errorMessage, setErrorMessage] = useState('')
 
+    // submission message
+    const [buttonMessage, setButtonMessage] = useState('Send Message')
+    const [errorMessage, setErrorMessage] = useState('')
+    const [successMessage, setSuccessMessage] = useState('')
     // validate phone
     const enteredNameIsValid = enteredName.length > 2
     const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched
@@ -45,53 +48,61 @@ function ContactForm({ title, emailTo, emailRouteUrl, cancelPass }) {
     // submit handler
     const submitHandler = (e) => {
         e.preventDefault()
+        console.log("button clicked")
+        setEnteredNameTouched(true)
         setEnteredPhoneTouched(true)
         setEnteredEmailTouched(true)
-        setEnteredNameTouched(true)
-        if (!enteredPhoneIsValid && !enteredEmailIsValid) {
+        if (!enteredPhoneIsValid && !enteredEmailIsValid && !enteredNameIsValid) {
             return
         }
+        // sending a request to api 
         const body = {
-            phone: enteredPhone,
+            name: enteredName,
             email: enteredEmail,
-            subject: enteredSubject,
+            phone: enteredPhone,
+            product: enteredProduct,
+            company: enteredCompany,
             message: enteredMessage,
             emailTo: emailTo
         }
+
         setShowLoading(true)
-        setSuccessMessage('')
+        setButtonMessage("Sending...")
         setErrorMessage('')
-        // fetch(emailRouteUrl, {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify(body)
-        // })
-        //     .then(res => res.json())
-        //     .then(res => {
-        //         console.log(res)
-        //         if (res === 200) {
-        //             setEnteredName('')
-        //             setEnteredEmail('')
-        //             setEnteredPhone('')
-        //             setEnteredProduct('BellaBot')
-        //             setEnteredCompany('')
-        //             setEnteredMessage('')
-        //             setEnteredEmailTouched(false)
-        //             setEnteredPhoneTouched(false)
-        //             setEnteredNameTouched(false)
-        //             setSuccessMessage('Message Sent!')
-        //             setShowLoading(false)
-        //         }
-        //         else if (res === 400) {
-        //             setShowLoading(false)
-        //             setErrorMessage('Something went wrong. Please try again.')
-        //         }
-        //     })
-        //     .catch(err => console.log(err))
+
+        fetch(emailRouteUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                if (res === 200) {
+                    setEnteredName('')
+                    setEnteredEmail('')
+                    setEnteredPhone('')
+                    setEnteredProduct('BellaBot')
+                    setEnteredCompany('')
+                    setEnteredMessage('')
+                    setEnteredNameTouched(false)
+                    setEnteredEmailTouched(false)
+                    setEnteredPhoneTouched(false)
+                    setSuccessMessage('Message Sent!')
+                    setButtonMessage("Sent")
+                    setShowLoading(false)
+                }
+                else if (res === 400) {
+                    setShowLoading(false)
+                    setErrorMessage('Something went wrong. Please try again.')
+                    setButtonMessage("Send Message")
+                }
+            })
+            .catch(err => console.log(err))
     }
-    console.log(enteredProduct)
+
     return (
         <Form onSubmit={submitHandler}>
 
@@ -167,7 +178,11 @@ function ContactForm({ title, emailTo, emailRouteUrl, cancelPass }) {
             </Content>
 
             <ButtonContainer>
-                <PrimaryButton>Send Message</PrimaryButton>
+                <PrimaryButton>
+                    {showLoading && <IconStyle spin icon={faSpinner} />}
+                    {buttonMessage}
+                </PrimaryButton>
+                <Errors>{errorMessage}</Errors>
             </ButtonContainer>
         </Form>
     )
@@ -191,12 +206,15 @@ const Content = styled.div`
 const ButtonContainer = styled.div`
 margin-top: 0px;
 display: flex;
-flex-direction: row;
-align-items: center;
+flex-direction: column;
+align-items: flex-end;
 justify-content: flex-end;
 `
 
 const InputContainer = styled.div`
 margin: 15px 0; 
 width: 100%; 
+`
+const IconStyle = styled(FontAwesomeIcon)`
+margin-right: 5px;
 `

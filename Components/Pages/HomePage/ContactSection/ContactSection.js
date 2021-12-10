@@ -3,14 +3,17 @@ import styled from 'styled-components'
 import ContactForm from '../../../UI/ContactForm/ContactForm'
 import MaxWidthContainer from '../../../UI/MaxWidthContainer/MaxWidthContainer'
 import RowTitle from '../../../UI/Typography/Titles/RowTitle'
-function ContactSection({ title }) {
+function ContactSection({ title, emailTo, emailRouteUrl }) {
     return (
         <MaxWidthContainer backgroundColor="var(--offWhite)">
             <ContactFlex>
                 <RowTitle>{title}</RowTitle>
                 <ContactContainer>
 
-                    <ContactForm />
+                    <ContactForm
+                        emailTo={emailTo}
+                        emailRouteUrl={emailRouteUrl}
+                    />
                 </ContactContainer>
 
             </ContactFlex>

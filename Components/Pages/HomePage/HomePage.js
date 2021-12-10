@@ -60,6 +60,8 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot }) {
 
             <ContactSection
                 title="Get A Quote"
+                emailTo="info@grobotics.co.nz"
+                emailRouteUrl="https://greensrobotics.co.nz/wp-json/webduel/v1/contact-email"
             />
         </Container>
 
