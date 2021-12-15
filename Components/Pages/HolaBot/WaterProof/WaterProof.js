@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 
 
-function Capacity({ title, content, image, video, className, theme, backgroundColor }) {
+function WaterProof({ title, content, image, video, className, theme, backgroundColor }) {
 
     return (
         <MaxWidthContainer backgroundColor={backgroundColor} >
@@ -27,43 +27,44 @@ function Capacity({ title, content, image, video, className, theme, backgroundCo
                         {content}
                     </Subtitle>
                 </div>
-                {image &&
-                    <div>
-                        <ImageContainer
-                            className="image-animation">
-                            <Image
-                                src={image}
-                                alt={content}
-                                width="100"
-                                height="160"
-                                layout="responsive"
-                                quality="100"
-                            />
-                        </ImageContainer>
-                    </div>
-                }
 
-                <Video dangerouslySetInnerHTML={{ __html: video }}>
-                </Video>
             </Container>
+            {image &&
+                <div>
+                    <ImageContainer>
+                        <ImageStyle
+                            src={image}
+                            // alt={content}
+                            layout="fill"
+                            quality="100"
+                        />
+                    </ImageContainer>
+                </div>
+            }
+
+            <Video dangerouslySetInnerHTML={{ __html: video }}>
+            </Video>
         </MaxWidthContainer>
 
     )
 }
 
-export default Capacity
+export default WaterProof
 
 const Container = styled.section`
-padding: 100px 0 100px 0;
+padding: 100px 0 0 0;
 max-width: 1000px; 
 margin: 0 auto;
 `
 const ImageContainer = styled.div`
 width: 100%;
-max-width: 700px;
-margin: 0 auto;
-overflow: hidden;
+position: relative; 
+padding-bottom: 55%;
+margin-top: 70px;
+`
+const ImageStyle = styled(Image)`
+    /* object-fit: cover; */
 `
 const Video = styled.div`
-margin-top: 50px;
+margin-top: 0;
 `

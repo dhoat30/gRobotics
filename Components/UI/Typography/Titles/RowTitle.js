@@ -26,6 +26,7 @@ function SectionTitle(props) {
             opacity: 0
         }
     }
+    let colorClass = props.theme === 'dark' ? 'light-strong-color' : null
     return (
         <motion.div ref={ref}
             variants={variants}
@@ -38,7 +39,8 @@ function SectionTitle(props) {
                 color={props.color}
                 dangerouslySetInnerHTML={{ __html: props.children }}
                 showUnderline={props.showUnderline}
-                className={props.className}>
+                className={`${props.className} ${colorClass}`}
+            >
             </Container>
 
         </motion.div>

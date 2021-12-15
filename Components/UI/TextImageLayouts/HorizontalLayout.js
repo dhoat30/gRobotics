@@ -4,13 +4,15 @@ import RowTitle from '../Typography/Titles/RowTitle'
 import Subtitle from '../Typography/Titles/Subtitle'
 import styled from 'styled-components'
 import Image from 'next/image'
-function HorizontalLayout({ title, content, image, video }) {
+function HorizontalLayout({ title, content, image, video, theme, backgroundColor, color }) {
+    let bkColor = theme === 'dark' ? backgroundColor : "var(--offWhite)"
+    let fontColor = color ? color : 'var(--darkGrey)'
     return (
-        <MaxWidthContainer backgroundColor='var(--offWhite)'>
+        <MaxWidthContainer backgroundColor={`${bkColor}`}>
             <Container>
                 <ContentContainer>
-                    <RowTitle color="var(--darkGrey)">{title}</RowTitle>
-                    <Subtitle color="var(--fontGrey)">{content}</Subtitle>
+                    <RowTitle theme={theme} color={`${fontColor}`}>{title}</RowTitle>
+                    <Subtitle theme={theme} color="var(--fontGrey)">{content}</Subtitle>
                 </ContentContainer>
                 {video ?
 
@@ -28,7 +30,7 @@ function HorizontalLayout({ title, content, image, video }) {
                     </ImageContainer>
                 }
             </Container>
-        </MaxWidthContainer>
+        </MaxWidthContainer >
     )
 }
 

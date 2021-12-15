@@ -7,6 +7,7 @@ import VideoText from '../../UI/Video/VideoText'
 import HorizontalLayout from '../../UI/TextImageLayouts/HorizontalLayout'
 import LeaseLayout from '../../UI/LeaseLayout/LeaseLayout'
 import Capacity from './Capacity/Capacity'
+import WaterProof from './WaterProof/WaterProof'
 function HolaBot({ robotData }) {
     console.log(robotData)
     if (!robotData) {
@@ -48,6 +49,31 @@ function HolaBot({ robotData }) {
                 backgroundColor="var(--black)"
                 theme="dark"
             />
+
+            <HorizontalLayout
+                title={robotData.acf.robot_flexible_content[3].title}
+                content={robotData.acf.robot_flexible_content[3].video_content}
+                video={robotData.acf.robot_flexible_content[3].video}
+                backgroundColor="var(--black)"
+                theme='dark'
+                color="var(--offWhite)"
+            />
+            <HorizontalLayout
+                title={robotData.acf.robot_flexible_content[4].title}
+                content={robotData.acf.robot_flexible_content[4].video_content}
+                video={robotData.acf.robot_flexible_content[4].video}
+                backgroundColor="var(--black)"
+                theme='dark'
+                color="var(--offWhite)"
+            />
+            <WaterProof
+                title={dataArray[5].title}
+                content={dataArray[5].content}
+                image={dataArray[5].image}
+                backgroundColor="var(--darkGrey)"
+                theme="dark"
+            />
+
             <LeaseLayout leaseOptions={robotData.acf.lease} />
         </Container>
 

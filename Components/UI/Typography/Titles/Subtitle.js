@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-function MediumTitle({ children, align, color, className, fontWeight }) {
+function MediumTitle({ children, align, color, className, fontWeight, theme }) {
     const { ref, inView } = useInView()
     const animation = useAnimation()
 
@@ -26,7 +26,7 @@ function MediumTitle({ children, align, color, className, fontWeight }) {
             opacity: 0
         }
     }
-
+    let colorClass = theme === 'dark' ? 'light-strong-color' : null
     return (
         <motion.div ref={ref}
             variants={variants}
@@ -37,7 +37,7 @@ function MediumTitle({ children, align, color, className, fontWeight }) {
                 color={color}
                 dangerouslySetInnerHTML={{ __html: children }}
                 fontWeight={fontWeight}
-                className={className}
+                className={`${className} ${colorClass}`}
                 align={align}
             >
             </Container>
@@ -51,5 +51,5 @@ const Container = styled.div`
     text-align: ${props => props.align ? props.align : "left"};
     margin: 10px 0;
     text-transform: capitalize;
-    color: ${props => props.color ? props.color : "var(--darkGrey)"}
+    color: ${props => props.color ? props.color : "var(--darkGrey)"};
 `
