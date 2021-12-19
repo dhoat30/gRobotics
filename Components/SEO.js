@@ -7,6 +7,7 @@ function SEO({ seo }) {
 
     return (
         <Head>
+            <link rel="icon" href="/images/favicon.ico" />
             <title>{seo.title}</title>
             <meta name="description"
                 content={seo.description.length > 160

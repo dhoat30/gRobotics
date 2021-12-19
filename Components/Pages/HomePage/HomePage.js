@@ -12,10 +12,9 @@ import MaxWidthContainer from '../../UI/MaxWidthContainer/MaxWidthContainer'
 import ContactForm from '../../UI/ContactForm/ContactForm'
 import RowTitle from '../../UI/Typography/Titles/RowTitle'
 import ContactSection from './ContactSection/ContactSection'
+import ProductCards from './ProductCards/ProductCards'
 function HomePage({ kettyBot, bellaBot, puduBot, holaBot }) {
-    console.log(kettyBot.acf)
-    console.log(bellaBot.acf)
-
+    let robots = [kettyBot, bellaBot, puduBot, holaBot]
     return (
 
         <Container>
@@ -57,7 +56,11 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot }) {
                 imageWidth="100"
                 color="var(--offWhite)"
             />
+            <ProductCards
+                robots={robots}
+            >
 
+            </ProductCards>
             <ContactSection
                 title="Get A Quote"
                 emailTo="info@grobotics.co.nz"

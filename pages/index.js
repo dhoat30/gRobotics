@@ -18,6 +18,7 @@ export default function Home(props) {
       <SEO
         seo={seo}
       />
+
       <HomePage
         kettyBot={props.kettyBot}
         bellaBot={props.bellaBot}
