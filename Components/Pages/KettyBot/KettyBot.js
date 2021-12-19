@@ -9,6 +9,7 @@ import VideoText from '../../UI/Video/VideoText'
 import VideoSection from './VideoSection/VideoSection'
 import ImageSection from './ImageSection/ImageSection'
 import LeaseLayout from '../../UI/LeaseLayout/LeaseLayout'
+import Specifications from '../../UI/Specifications/Specifications'
 function KettyBot({ robotData }) {
     console.log(robotData.acf.robot_flexible_content)
     const kettyBot = robotData.acf.robot_flexible_content
@@ -86,7 +87,13 @@ function KettyBot({ robotData }) {
                 video={kettyBot[11].video}
                 backgroundColor="var(--offWhite)"
             />
-
+            <Specifications
+                image={kettyBot[13].image}
+                specsArray={kettyBot[13].robot_specs}
+                backgroundColor="var(--darkGrey)"
+                theme="dark"
+                height="250"
+            />
             <LeaseLayout leaseOptions={robotData.acf.lease} />
         </Container>
 

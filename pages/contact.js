@@ -7,14 +7,16 @@ import getRobot from '../util/get-robot'
 import getHomeRobot from '../util/get-home-robot'
 import ContactPage from '../Components/Pages/ContactPage/ContactPage'
 import getFaq from '../util/get-faq'
+import SEO from '../Components/SEO'
 
 export default function Home(props) {
+  const seo = {
+    title: "Contact Us | G Robotics |  Browse Robots For Restaurants, Hospitals & Warehouses",
+    description: "International High-tech Enterprise that integrates R&D, design, production, and sales businesses of catering service robots together."
+  }
   return (
     < React.Fragment >
-      <Head>
-        {/* add seo in here */}
-        <title>G Robotics | HolaBot</title>
-      </Head>
+      <SEO seo={seo} />
       <ContactPage faq={props.faq} />
     </React.Fragment >
   )

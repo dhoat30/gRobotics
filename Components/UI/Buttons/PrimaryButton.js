@@ -1,10 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-function PrimaryButton({ children, className }) {
+function PrimaryButton({ children, className, onClick }) {
 
     return (
-        <motion.button style={buttonStyle}
+        <motion.button
+            onClick={onClick}
+            style={buttonStyle}
             whileHover={{
                 scale: 1.1,
                 boxShadow: "0px 0px 8px var(--green)"

@@ -6,6 +6,8 @@ import VerticleLayout from '../../UI/TextImageLayouts/VerticleLayout'
 import VideoText from '../../UI/Video/VideoText'
 import HorizontalLayout from '../../UI/TextImageLayouts/HorizontalLayout'
 import LeaseLayout from '../../UI/LeaseLayout/LeaseLayout'
+import Specifications from '../../UI/Specifications/Specifications'
+import PuduSpecs from './PuduSpecs/PuduSpecs'
 function BellaBot({ robotData }) {
     if (!robotData) {
         return null
@@ -15,7 +17,6 @@ function BellaBot({ robotData }) {
     const heroData = robotData.acf.robot_flexible_content.filter(item => {
         return item.acf_fc_layout === "hero_section"
     })
-
     return (
 
         <Container>
@@ -62,6 +63,14 @@ function BellaBot({ robotData }) {
                 title={robotData.acf.robot_flexible_content[8].title}
                 content={robotData.acf.robot_flexible_content[8].content}
                 image={robotData.acf.robot_flexible_content[8].image}
+            />
+
+            <PuduSpecs
+                image={robotData.acf.robot_flexible_content[12].image}
+                specsArray={robotData.acf.robot_flexible_content[12].robot_specs}
+                secondSpecs={robotData.acf.robot_flexible_content[13].robot_specs}
+                backgroundColor="var(--darkGrey)"
+                theme="dark"
             />
             <LeaseLayout leaseOptions={robotData.acf.lease} />
         </Container>

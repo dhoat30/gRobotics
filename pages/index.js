@@ -5,15 +5,19 @@ import HomePage from '../Components/Pages/HomePage/HomePage'
 import getPage from '../util/get-page'
 import getRobot from '../util/get-robot'
 import getHomeRobot from '../util/get-home-robot'
+import SEO from '../Components/SEO'
 
 export default function Home(props) {
   console.log(props)
+  const seo = {
+    title: "G Robotics |  Browse Robots For Restaurants, Hospitals & Warehouses",
+    description: "International High-tech Enterprise that integrates R&D, design, production, and sales businesses of catering service robots together."
+  }
   return (
     < React.Fragment >
-      <Head>
-        {/* add seo in here */}
-        <title>G Robotics | HolaBot</title>
-      </Head>
+      <SEO
+        seo={seo}
+      />
       <HomePage
         kettyBot={props.kettyBot}
         bellaBot={props.bellaBot}

@@ -1,6 +1,7 @@
 import React from 'react'
 import HeroImageText from '../../UI/Hero/HeroImageText'
 import LeaseLayout from '../../UI/LeaseLayout/LeaseLayout'
+import Specifications from '../../UI/Specifications/Specifications'
 import ImageTwoTitleLayout from '../../UI/TextImageLayouts/ImageTwoTitleLayout'
 import MultipleImagesLayout from '../../UI/TextImageLayouts/MultipleImagesLayout'
 import VerticleLayout from '../../UI/TextImageLayouts/VerticleLayout'
@@ -16,6 +17,7 @@ function BellaBot({ robotData }) {
         return item.acf_fc_layout === "hero_section"
     })
     const dataArray = robotData.acf.robot_flexible_content
+
     return (
         <div>
             <HeroImageText
@@ -83,6 +85,12 @@ function BellaBot({ robotData }) {
 
             <MultiModalInteraction
                 robotData={dataArray}
+            />
+            <Specifications
+                image={dataArray[16].image}
+                specsArray={dataArray[16].robot_specs}
+                backgroundColor="var(--darkGrey)"
+                theme="dark"
             />
             <LeaseLayout leaseOptions={robotData.acf.lease} />
         </div>

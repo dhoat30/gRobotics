@@ -8,12 +8,17 @@ import HorizontalLayout from '../../UI/TextImageLayouts/HorizontalLayout'
 import LeaseLayout from '../../UI/LeaseLayout/LeaseLayout'
 import Capacity from './Capacity/Capacity'
 import WaterProof from './WaterProof/WaterProof'
+import MaxWidthContainer from '../../UI/MaxWidthContainer/MaxWidthContainer'
+import RowTitle from '../../UI/Typography/Titles/RowTitle'
+import Process from './Process/Process'
+import Specifications from '../../UI/Specifications/Specifications'
+
 function HolaBot({ robotData }) {
-    console.log(robotData)
+
     if (!robotData) {
         return null
     }
-    console.log(process.env.url)
+
     // get hero data
     const heroData = robotData.acf.robot_flexible_content.filter(item => {
         return item.acf_fc_layout === "hero_section"
@@ -74,6 +79,28 @@ function HolaBot({ robotData }) {
                 theme="dark"
             />
 
+            <MaxWidthContainerStyle
+                backgroundColor="var(--black)"
+            >
+                <RowTitle color="var(--offWhite)" align="center">Business Process Presentation</RowTitle>
+                <Process
+                    subtitle={robotData.acf.robot_flexible_content[6].content}
+                    image={robotData.acf.robot_flexible_content[6].image}
+                    theme="dark"
+                />
+                <Process
+                    subtitle={robotData.acf.robot_flexible_content[7].content}
+                    image={robotData.acf.robot_flexible_content[7].image}
+                    theme="dark"
+                />
+            </MaxWidthContainerStyle>
+            <Specifications
+                image={dataArray[8].image}
+                specsArray={dataArray[8].robot_specs}
+                backgroundColor="var(--darkGrey)"
+                theme="dark"
+            />
+
             <LeaseLayout leaseOptions={robotData.acf.lease} />
         </Container>
 
@@ -84,4 +111,7 @@ export default HolaBot
 const Container = styled.section``
 const VerticleLayoutStyle = styled(VerticleLayout)`
 padding-bottom: 0;
+`
+const MaxWidthContainerStyle = styled(MaxWidthContainer)`
+padding: 100px 0;
 `

@@ -9,7 +9,7 @@ import Select from '../Input/Select'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/pro-duotone-svg-icons'
 
-function ContactForm({ emailTo, emailRouteUrl, cancelPass }) {
+function ContactForm({ emailTo, emailRouteUrl, cancelPass, dropShadow, className }) {
     const [enteredName, setEnteredName] = useState('')
     const [enteredNameTouched, setEnteredNameTouched] = useState(false)
 
@@ -104,7 +104,7 @@ function ContactForm({ emailTo, emailRouteUrl, cancelPass }) {
     }
 
     return (
-        <Form onSubmit={submitHandler}>
+        <Form onSubmit={submitHandler} dropShadow={dropShadow} className={className}>
 
             <Content>
                 <InputContainer>
@@ -193,7 +193,7 @@ export default ContactForm
 const Form = styled.form`
 min-height: 200px;
 width: 100%;
-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+box-shadow: ${props => !props.dropShadow ? null : "rgba(149, 157, 165, 0.2) 0px 8px 24px"};
 border-radius: 10px;
 padding: 30px 50px;
 @media (max-width: 500px){ 

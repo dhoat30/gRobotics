@@ -7,7 +7,7 @@ function SEO({ seo }) {
 
     return (
         <Head>
-            <title>{seo.title} | Be Inspired Projects</title>
+            <title>{seo.title}</title>
             <meta name="description"
                 content={seo.description.length > 160
                     ? seo.description.substring(0, 160)
@@ -22,9 +22,9 @@ function SEO({ seo }) {
                 : seo.description
             }
                 key="ogdesc" />
-            <meta property="og:url" content={`https://inspiry.co.nz/home${router.asPath}`} key="ogurl" />
+            <meta property="og:url" content={`https://grobotics.co.nz${router.asPath}`} key="ogurl" />
             <meta property="og:image" content={seo.imageSrc} key="ogimage" />
-            <meta property="og:site_name" content={"Be Inspired"} key="ogsitename" />
+            <meta property="og:site_name" content={"G Robotics"} key="ogsitename" />
         </Head>
     )
 }
