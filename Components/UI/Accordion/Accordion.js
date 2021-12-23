@@ -1,15 +1,22 @@
 import React from 'react'
 import Accordion from 'react-bootstrap/Accordion';
 import styled from 'styled-components';
+import MediumTitle from '../Typography/Titles/MediumTitle'
+import Paragraph from '../Typography/Paragraph/Paragraph'
 function AccordionComponent({ faq }) {
     if (faq.length === 0) {
         return null
     }
-    const faqs = faq.map((item, index) => {
+    const faqs = faq.reverse().map((item, index) => {
         return <Accordion.Item eventKey={index} key={index}>
-            <Accordion.Header>{item.title.rendered}</Accordion.Header>
+            <Accordion.Header >
+                <div dangerouslySetInnerHTML={{ __html: item.title.rendered }} fontWeight="500" color="var(--darkGrey)">
+                </div >
+
+            </Accordion.Header>
             <Accordion.Body>
-                {item.acf.answer}
+                <div dangerouslySetInnerHTML={{ __html: item.acf.answer }} fontWeight="300" color="var(--darkGrey)">
+                </div >
             </Accordion.Body>
         </Accordion.Item>
     })

@@ -1,7 +1,7 @@
 :root {
   --black: rgba(0, 0, 0, 1);
-  --green: #129b4c;
-  --darkGreen: #086d32;
+  --green: #23b989;
+  --darkGreen: #079064;
   --borderColor: #e0e0e0;
   --offWhite: #f9f9f9;
   --silver: #f5f7fa;
@@ -83,7 +83,7 @@ h2 strong {
   background-image: linear-gradient(
     to right bottom,
     #149c4f,
-    #00aa8e,
+    #23b989,
     #00b3c7,
     #00b7ee,
     #72b7ff
@@ -108,7 +108,7 @@ h3 {
 h3 strong {
   background-image: linear-gradient(
     to right bottom,
-    #149c4f,
+    #079064,
     #00aa8e,
     #00b3c7,
     #00b7ee,
@@ -165,4 +165,18 @@ h5 strong {
 }
 .just-video iframe {
   border-radius: 0 !important;
+}
+
+/* policies */
+.policies p strong {
+  display: inline-block !important;
+}
+.policies p {
+  margin-bottom: 0;
+}
+.policies h6 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin: 25px 0 5px 0;
 }

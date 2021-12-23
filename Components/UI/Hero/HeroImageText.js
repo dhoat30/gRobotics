@@ -42,6 +42,7 @@ function HeroImageText({ image, title, subtitle, imageWidth, imageHeight, backgr
                     >
                         {image &&
                             <ImageStyle
+                                priority={true}
                                 src={image}
                                 layout="responsive"
                                 height={imageHeight ? imageHeight : "100"}

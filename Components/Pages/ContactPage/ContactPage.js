@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import AccordionComponent from '../../UI/Accordion/Accordion'
 import RowTitle from '../../UI/Typography/Titles/RowTitle'
 function ContactPage({ faq }) {
-
+    console.log(faq)
     return (
         <MaxWidthContainer backgroundColor="var(--offWhite)">
             <Container>

@@ -13,11 +13,11 @@ const menuItems = [
     },
     {
         name: "Privacy Policy",
-        link: "/privacy-policy"
+        link: "/extra/privacy-policy"
     },
     {
         name: "Terms & Condition",
-        link: "/terms-condition"
+        link: "/extra/terms-conditions"
     }
 ]
 

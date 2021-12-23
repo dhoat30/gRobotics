@@ -5,7 +5,6 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import '../Components/Layout.css'
 import Head from 'next/head'
 import { ContactInfoContextProvider } from '../store/contact-info-context'
-import { HeroImageContextProvider } from '../store/hero-image-context';
 import { LoadingContextProvider } from '../store/loading-context'
 import Router from 'next/router'
 import LoadingOverlay from '../Components/UI/LoadingOverlay/LoadingOverlay';

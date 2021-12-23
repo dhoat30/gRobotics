@@ -13,12 +13,25 @@ import ContactForm from '../../UI/ContactForm/ContactForm'
 import RowTitle from '../../UI/Typography/Titles/RowTitle'
 import ContactSection from './ContactSection/ContactSection'
 import ProductCards from './ProductCards/ProductCards'
-function HomePage({ kettyBot, bellaBot, puduBot, holaBot }) {
+import Slider from '../../UI/Slider/Slider'
+import Steps from './Steps/Steps'
+function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps }) {
     let robots = [kettyBot, bellaBot, puduBot, holaBot]
+
+    const sliderImages = heroImages.map(item => {
+        return {
+            link: item.acf.link,
+            desktopImage: item.acf.desktop_image
+        }
+    })
+
+
     return (
 
         <Container>
-
+            <Slider
+                sliderImages={sliderImages}
+            />
             <HeroSection
                 image={kettyBot.acf.image}
                 title={kettyBot.acf.title}
@@ -27,6 +40,8 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot }) {
                 flex="column"
                 imageHeight="100"
                 imageWidth="100"
+                showLink={true}
+                link="/ketty-bot"
             />
             {/* <img src={robotData.kettyBot.acf.robot_flexible_content[0].desktop_image} width="50%" /> */}
             <MaxWidthContainer backgroundColor="var(--silver)">
@@ -55,12 +70,10 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot }) {
                 imageHeight="100"
                 imageWidth="100"
                 color="var(--offWhite)"
+                showLink={true}
+                link="/hola-bot"
             />
-            <ProductCards
-                robots={robots}
-            >
-
-            </ProductCards>
+            <Steps steps={steps} />
             <ContactSection
                 title="Get A Quote"
                 emailTo="info@grobotics.co.nz"

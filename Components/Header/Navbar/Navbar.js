@@ -84,9 +84,12 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
-   
+ 
 `
 const MenuContainer = styled.div`
+height: 43px; 
+display: flex; 
+align-items: center; 
 @media (max-width: 1000px){ 
     display: none !important;
 }
