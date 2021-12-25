@@ -16,7 +16,7 @@ const menuItems = [
         link: "/extra/privacy-policy"
     },
     {
-        name: "Terms & Condition",
+        name: "Terms & Conditions",
         link: "/extra/terms-conditions"
     }
 ]

@@ -7,7 +7,7 @@ import MultipleImagesLayout from '../../UI/TextImageLayouts/MultipleImagesLayout
 import VerticleLayout from '../../UI/TextImageLayouts/VerticleLayout'
 import VideoText from '../../UI/Video/VideoText'
 import MultiModalInteraction from './MulitModalInteraction/MultiModalInteraction'
-
+import styled from 'styled-components'
 function BellaBot({ robotData }) {
     // console.log(robotData.acf.robot_flexible_content)
     if (!robotData) {
@@ -17,7 +17,7 @@ function BellaBot({ robotData }) {
         return item.acf_fc_layout === "hero_section"
     })
     const dataArray = robotData.acf.robot_flexible_content
-
+    console.log(dataArray)
     return (
         <div>
             <HeroImageText
@@ -37,15 +37,16 @@ function BellaBot({ robotData }) {
                 backgroundColor="var(--black)"
                 theme="dark"
             />
-            <VerticleLayout
+            <VerticleLayoutTop
                 title={dataArray[2].title}
+                subtitle="Visual Slam"
                 content={dataArray[2].content}
                 video={dataArray[2].video}
                 backgroundColor="var(--darkGrey)"
                 theme="dark"
             />
-            <VerticleLayout
-
+            <VerticleLayoutStyle
+                subtitle={dataArray[3].title}
                 video={dataArray[3].video}
                 backgroundColor="var(--darkGrey)"
                 theme="dark"
@@ -86,15 +87,26 @@ function BellaBot({ robotData }) {
             <MultiModalInteraction
                 robotData={dataArray}
             />
+            <VerticleLayout
+
+            />
             <Specifications
                 image={dataArray[16].image}
                 specsArray={dataArray[16].robot_specs}
                 backgroundColor="var(--darkGrey)"
                 theme="dark"
             />
+
+
             <LeaseLayout leaseOptions={robotData.acf.lease} />
         </div>
     )
 }
 
 export default BellaBot
+const VerticleLayoutStyle = styled(VerticleLayout)`
+padding: 20px 0 100px 0;
+`
+const VerticleLayoutTop = styled(VerticleLayout)`
+padding-bottom: 0;
+`

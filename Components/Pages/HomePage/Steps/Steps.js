@@ -3,12 +3,13 @@ import MaxWidthContainer from '../../../UI/MaxWidthContainer/MaxWidthContainer'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-light-svg-icons'
-
+import RowTitle from '../../../UI/Typography/Titles/RowTitle'
 function Steps({ steps }) {
+
     console.log(steps)
     const cards = steps.map((item, index) => {
         console.log(item)
-        return <Card >
+        return <Card key={index}>
             <Step>
                 {item.step}
             </Step>
@@ -18,6 +19,7 @@ function Steps({ steps }) {
     return (
         <MaxWidthContainer backgroundColor="var(--darkGrey)">
             <Container>
+                <RowTitle align="center" color="var(--offWhite) ">Robot Installation Steps</RowTitle>
                 <Cards>
                     {cards}
                 </Cards>
@@ -29,12 +31,16 @@ function Steps({ steps }) {
 
 export default Steps
 const Container = styled.div`
-padding: 70px;
+padding: 70px 0;
 `
 const Cards = styled.ul`
 display: flex; 
 justify-content:center; 
 flex-wrap: wrap;
+margin: 50px 0 0 0;
+@media(max-width: 700px){ 
+     margin: 20px 0 0 0;
+ }
 `
 const Card = styled.li`
 cursor: pointer;
@@ -53,12 +59,26 @@ transition: var(--transition);
 &:hover{ 
     transform: scale(1.1);
 }
+@media(max-width: 700px){ 
+    max-width: 150px; 
+height: 150px;
+margin: 5px; 
+ }
+ @media(max-width: 360px){ 
+    max-width: 130px; 
+height: 150px;
+margin: 5px; 
+ }
 `
 const Step = styled.h4`
  color: white; 
  text-align: center; 
  font-size: 1.5rem; 
  line-height: 2rem; 
+ @media(max-width: 700px){ 
+     font-size: 1rem; 
+     line-height: 1.2rem; 
+ }
 
 `
 const IconStyle = styled(FontAwesomeIcon)`
@@ -66,4 +86,7 @@ const IconStyle = styled(FontAwesomeIcon)`
  bottom: 10px;
  font-size: 3rem;
  color: white;
+ @media(max-width: 700px){ 
+     bottom: -5px; 
+ }
 `

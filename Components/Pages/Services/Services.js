@@ -10,21 +10,13 @@ import ColumnTitle from '../../UI/Typography/Titles/ColumnTitle';
 import Subtitle from '../../UI/Typography/Titles/Subtitle';
 import PrimaryButton from '../../UI/Buttons/PrimaryButton';
 import AccordionComponent from '../../UI/Accordion/Accordion'
-
+import Link from 'next/link'
 function Services({ services, faq }) {
 
     const serviceCard = services.reverse().map(item => {
-        let url
-        if (item.title.rendered.includes("mapping")) {
-            url = "https://calendly.com/info-37340/60min"
-        }
-        else if (item.title.rendered.includes("Troubleshoot")) {
-            url = "https://calendly.com/info-37340/online-troubleshoot"
-        }
-        else if (item.title.rendered.includes("Trial")) {
-            url = "https://calendly.com/info-37340/robot-trial"
-        }
+        console.log(item.acf)
 
+        let url = item.acf.link
         return <Card key={item.id}>
             <ImageContainer>
                 <ImageStyle
@@ -36,7 +28,16 @@ function Services({ services, faq }) {
             <Content>
                 <ColumnTitle align="center">{item.title.rendered}</ColumnTitle>
                 <Subtitle align="center">{item.acf.service_description}</Subtitle>
-                <ButtonStyle onClick={() => openPopupWidget({ url })}>Book Now</ButtonStyle>
+                <Subtitle align="center">{item.acf.service_charges}</Subtitle>
+                {url ?
+                    <ButtonStyle onClick={() => openPopupWidget({ url })}>Book Now</ButtonStyle>
+                    :
+                    <ButtonStyle><Link href="/contact" passHref>
+                        <a style={{ color: "white" }}>Book Now</a>
+                    </Link>
+                    </ButtonStyle>
+                }
+
             </Content>
         </Card>
     })
@@ -90,6 +91,8 @@ height: 300px;
 `
 const Content = styled.div`
  padding: 20px 0;
+
+ 
 `
 const ImageStyle = styled(Image)`
 object-fit: cover; 

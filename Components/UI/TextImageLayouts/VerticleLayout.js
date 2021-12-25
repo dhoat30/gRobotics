@@ -4,65 +4,12 @@ import styled from 'styled-components'
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer'
 import ColumnTitle from '../Typography/Titles/ColumnTitle'
 import Image from 'next/image'
-
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useAnimation } from 'framer-motion'
 
-function VerticleLayout({ title, content, image, video, className, theme, backgroundColor }) {
-    // const sectionRef = useRef(null)
-    // let imageItem = useRef(null)
-    // let titleItem = useRef(null)
-    // let contentItem = useRef(null)
-    // const { ref, inView } = useInView({
-    //     threshold: 0.5
-    // })
-    // const animationTitle = useAnimation()
-    // const animationContent = useAnimation()
-    // const animationImage = useAnimation()
+function VerticleLayout({ title, content, image, video, className, theme, backgroundColor, subtitle }) {
 
-    // useEffect(() => {
-    //     if (inView) {
-    //         animationTitle.start({
-    //             y: 0,
-    //             opacity: 1,
-    //             transition: {
-    //                 ease: 'easeOut', duration: 1
-    //             }
-    //         })
-    //         animationContent.start({
-    //             y: 0,
-    //             opacity: 1,
-    //             transition: {
-    //                 ease: 'easeOut', duration: 1
-    //             }
-    //         })
-    //         animationImage.start({
-    //             y: 0,
-    //             opacity: 1,
-    //             transition: {
-    //                 ease: 'easeOut', duration: 1
-    //             }
-    //         })
-    //     }
-    //     if (!inView) {
-    //         animationTitle.start({
-    //             y: '50px',
-    //             opacity: 0,
-    //         })
-    //         animationContent.start({
-    //             y: '50px',
-    //             opacity: 0
-    //         })
-    //         animationImage.start({
-    //             y: '50px',
-    //             opacity: 0,
-    //             transition: {
-    //                 ease: 'easeOut', duration: 1
-    //             }
-    //         })
-    //     }
-    // }, [inView])
 
     return (
         <MaxWidthContainer backgroundColor={backgroundColor} >
@@ -75,13 +22,14 @@ function VerticleLayout({ title, content, image, video, className, theme, backgr
                 </motion.div>
 
                 <motion.div >
-                    <ColumnTitle
+                    <ColumnTitleStyle
                         theme={theme}
                         align="center"
                         color="var(--lightGrey)">
                         {content}
-                    </ColumnTitle>
+                    </ColumnTitleStyle>
                 </motion.div>
+                <Sub dangerouslySetInnerHTML={{ __html: subtitle }}></Sub>
                 {image &&
                     <motion.div>
                         <ImageContainer
@@ -120,5 +68,14 @@ margin: 0 auto;
 overflow: hidden;
 `
 const Video = styled.div`
-margin-top: 50px;
+margin-top: 10px;
+`
+const Sub = styled.div`
+color: white;
+text-align: center !important;
+font-size: 2rem; 
+font-weight: 500;
+`
+const ColumnTitleStyle = styled(ColumnTitle)`
+margin-bottom: 50px;
 `

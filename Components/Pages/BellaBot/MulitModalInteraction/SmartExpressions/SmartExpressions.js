@@ -6,7 +6,6 @@ import RowTitle from '../../../../UI/Typography/Titles/RowTitle'
 import Subtitle from '../../../../UI/Typography/Titles/Subtitle'
 
 function SmartExpressions({ data, backgroundColor, theme }) {
-    console.log(data)
     return (
         <MaxWidthContainer backgroundColor={backgroundColor}>
             <Container>
@@ -55,12 +54,12 @@ const ImageContainer = styled.div`
 position: relative;
 width: 100%;
 max-width: 600px;
-height: 600px;
+height: 450px;
 margin-top: 50px;
 margin-bottom: -150px;
 z-index: 2; 
 @media (max-width: 600px){ 
-    height: 300px;
+    height: 250px;
     width: 300px;
     margin-bottom: -100px;
 }

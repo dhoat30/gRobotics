@@ -29,6 +29,10 @@ const menuItems = [{
     title: "KettyBot"
 },
 {
+    link: "/services",
+    title: "Services"
+},
+{
     link: "/contact",
     title: "Contact"
 }
