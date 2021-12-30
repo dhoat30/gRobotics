@@ -44,15 +44,22 @@ function NavbarComponent() {
 
     // contact context 
     const contactInfoCtx = useContext(ContactInfoContext)
-
+    // hide menu on link click
+    const linkClickHandler = (value) => {
+        console.log("link clicked")
+        setShowMobileMenu(value)
+    }
     // map menu array  object
     const menu = menuItems.map(item => {
         return < MenuLink
+            hideMobileMenu={linkClickHandler}
             link={item.link}
             title={item.title}
             key={item.link}
         />
     })
+
+
     return (
         <NavbarStyle>
             <Link href="/" passHref>
@@ -71,7 +78,7 @@ function NavbarComponent() {
 
             {showMobileMenu ?
                 <MobileMenuContainer>
-                    <MenuListItems>
+                    <MenuListItems >
                         {menu}
                     </MenuListItems>
                 </MobileMenuContainer> : null

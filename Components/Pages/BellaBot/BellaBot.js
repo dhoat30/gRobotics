@@ -8,6 +8,7 @@ import VerticleLayout from '../../UI/TextImageLayouts/VerticleLayout'
 import VideoText from '../../UI/Video/VideoText'
 import MultiModalInteraction from './MulitModalInteraction/MultiModalInteraction'
 import styled from 'styled-components'
+import HorizontalLayout from '../../UI/TextImageLayouts/HorizontalLayout'
 function BellaBot({ robotData }) {
     // console.log(robotData.acf.robot_flexible_content)
     if (!robotData) {
@@ -87,8 +88,21 @@ function BellaBot({ robotData }) {
             <MultiModalInteraction
                 robotData={dataArray}
             />
-            <VerticleLayout
-
+            <HorizontalLayout
+                theme="dark"
+                title={dataArray[12].title}
+                content={dataArray[12].content}
+                image={dataArray[12].image}
+                backgroundColor="var(--black)"
+                color="var(--offWhite)"
+            />
+            <HorizontalLayout
+                theme="dark"
+                title={dataArray[13].title}
+                content={dataArray[13].content}
+                image={dataArray[13].image}
+                backgroundColor="var(--black)"
+                color="var(--offWhite)"
             />
             <Specifications
                 image={dataArray[16].image}

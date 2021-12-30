@@ -29,7 +29,7 @@ function SmartExpressions({ data, backgroundColor, theme }) {
                 </ImageContainer>
             </Container>
             <BackgroundImageContainer>
-                <Image src={data.images[2].image}
+                <ImageStyle src={data.images[2].image}
                     layout="fill"
                 />
             </BackgroundImageContainer>
@@ -66,7 +66,7 @@ z-index: 2;
 `
 const BackgroundImageContainer = styled.div`
 position: absolute;
-width: 100%;
+width: 100% !important;
 left: 0;
 height: 100px;
 bottom: 0;
@@ -77,4 +77,7 @@ z-index: 1;
     height: 70px;
     width: 200%;
 }
+`
+const ImageStyle = styled(Image)`
+overflow: hidden;
 `

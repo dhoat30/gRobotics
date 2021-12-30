@@ -2,11 +2,15 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-function MenuLink({ title, link }) {
+function MenuLink({ title, link, hideMobileMenu }) {
+    const anchorClickHandler = () => {
+        console.log("anchor link clicked")
+        hideMobileMenu(false)
+    }
     return (
         <List>
-            <Link href={link}>
-                <Anchor>
+            <Link href={link} >
+                <Anchor onClick={anchorClickHandler}>
                     {title}
                 </Anchor>
             </Link>
