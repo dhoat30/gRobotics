@@ -9,6 +9,7 @@ import VideoText from '../../UI/Video/VideoText'
 import MultiModalInteraction from './MulitModalInteraction/MultiModalInteraction'
 import styled from 'styled-components'
 import HorizontalLayout from '../../UI/TextImageLayouts/HorizontalLayout'
+import RGBD from './RGBD/RGBD'
 function BellaBot({ robotData }) {
     // console.log(robotData.acf.robot_flexible_content)
     if (!robotData) {
@@ -103,7 +104,26 @@ function BellaBot({ robotData }) {
                 image={dataArray[13].image}
                 backgroundColor="var(--black)"
                 color="var(--offWhite)"
+                flipFlex="true"
             />
+
+
+            <RGBDStyle
+                title={dataArray[14].title}
+                content={dataArray[14].content}
+                image={dataArray[14].image}
+                backgroundColor="var(--lightBlack)"
+                theme="dark"
+            />
+
+            <RGBDStyle
+                title={dataArray[15].title}
+                content={dataArray[15].content}
+                image={dataArray[15].image}
+                backgroundColor="var(--lightBlack)"
+                theme="dark"
+            />
+
             <Specifications
                 image={dataArray[16].image}
                 specsArray={dataArray[16].robot_specs}
@@ -123,4 +143,7 @@ padding: 20px 0 100px 0;
 `
 const VerticleLayoutTop = styled(VerticleLayout)`
 padding-bottom: 0;
+`
+const RGBDStyle = styled(RGBD)`
+
 `

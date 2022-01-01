@@ -4,12 +4,12 @@ import RowTitle from '../Typography/Titles/RowTitle'
 import Subtitle from '../Typography/Titles/Subtitle'
 import styled from 'styled-components'
 import Image from 'next/image'
-function HorizontalLayout({ title, content, image, video, theme, backgroundColor, color }) {
+function HorizontalLayout({ title, content, image, video, theme, backgroundColor, color, flipFlex }) {
     let bkColor = theme === 'dark' ? backgroundColor : "var(--offWhite)"
     let fontColor = color ? color : 'var(--darkGrey)'
     return (
         <MaxWidthContainer backgroundColor={`${bkColor}`}>
-            <Container>
+            <Container flipFlex={flipFlex}>
                 <ContentContainer>
                     <RowTitle theme={theme} color={`${fontColor}`}>{title}</RowTitle>
                     <Subtitle theme={theme} color="var(--fontGrey)">{content}</Subtitle>
@@ -40,6 +40,7 @@ padding: 100px 0;
 display: flex;
 align-items: center;
 justify-content: space-between;
+flex-direction: ${props => props.flipFlex ? "row-reverse" : "row"};
 @media (max-width: 1000px ){ 
    flex-direction: column;
    padding: 50px 0;

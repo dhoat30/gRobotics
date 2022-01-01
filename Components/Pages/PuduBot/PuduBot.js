@@ -6,8 +6,10 @@ import VerticleLayout from '../../UI/TextImageLayouts/VerticleLayout'
 import VideoText from '../../UI/Video/VideoText'
 import HorizontalLayout from '../../UI/TextImageLayouts/HorizontalLayout'
 import LeaseLayout from '../../UI/LeaseLayout/LeaseLayout'
-import Specifications from '../../UI/Specifications/Specifications'
 import PuduSpecs from './PuduSpecs/PuduSpecs'
+import PuduFeatures from './PuduFeatures/PuduFeatures'
+import FlexibleDishCover from './FlexibleDishCover/FlexibleDishCover'
+
 function BellaBot({ robotData }) {
     if (!robotData) {
         return null
@@ -17,6 +19,7 @@ function BellaBot({ robotData }) {
     const heroData = robotData.acf.robot_flexible_content.filter(item => {
         return item.acf_fc_layout === "hero_section"
     })
+    // console.log(robotData)
     return (
 
         <Container>
@@ -36,11 +39,7 @@ function BellaBot({ robotData }) {
                 image={robotData.acf.robot_flexible_content[2].image}
                 backgroundColor="var(--silver)"
             />
-            {/* <VerticleLayoutStyle
-                title={robotData.acf.robot_flexible_content[3].title}
-                content={robotData.acf.robot_flexible_content[3].content}
-                image={robotData.acf.robot_flexible_content[3].image}
-            /> */}
+
             <VideoText
                 title={robotData.acf.robot_flexible_content[3].title}
                 content={robotData.acf.robot_flexible_content[3].video_content}
@@ -48,7 +47,12 @@ function BellaBot({ robotData }) {
                 backgroundColor="var(--silver)"
                 theme='light'
             />
-
+            <PuduFeatures
+                data={robotData.acf.robot_flexible_content[4]}
+            />
+            <FlexibleDishCover
+                data={robotData.acf.robot_flexible_content[5]}
+            />
             <HorizontalLayout
                 title={robotData.acf.robot_flexible_content[6].title}
                 content={robotData.acf.robot_flexible_content[6].video_content}

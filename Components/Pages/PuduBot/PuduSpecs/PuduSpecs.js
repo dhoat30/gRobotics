@@ -6,7 +6,6 @@ import { style } from 'dom-helpers'
 import MediumTitle from '../../../UI/Typography/Titles/Subtitle'
 function PuduSpecs({ image, specsArray, backgroundColor, secondSpecs }) {
     const specsList = specsArray.map((item, index) => {
-        console.log(item)
         return <tbody key={index}>
             <ListItem>
                 <Key> {item.key}</Key>
@@ -15,7 +14,6 @@ function PuduSpecs({ image, specsArray, backgroundColor, secondSpecs }) {
         </tbody>
     })
     const secondSpecsList = secondSpecs.map((item, index) => {
-        console.log(item)
         return <ListItem key={index}>
             <Key> {item.key}</Key>
             <Value>{item.value}</Value>
