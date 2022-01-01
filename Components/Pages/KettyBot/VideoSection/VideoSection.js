@@ -30,14 +30,14 @@ function VideoSection({ video, title, content, backgroundColor, theme, flex }) {
 
 export default VideoSection
 const Container = styled.section`
-padding: 200px 0 200px 0;
+padding: 100px 0 100px 0;
 margin: 0 auto 0 auto;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 align-items: center;
 @media (max-width: 1000px ){ 
-    padding: 100px 0 100px 0;
+    padding: 50px 0 50px 0;
 
 }
 `

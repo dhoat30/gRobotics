@@ -34,11 +34,11 @@ function ImageSection({ image, title, content, backgroundColor, theme, flex }) {
 
 export default ImageSection
 const Container = styled.section`
-padding: 200px 0 200px 0;
+padding: 100px 0 100px 0;
 margin: 0 auto 0 auto;
 max-width: 1000px;
 @media (max-width: 1000px){ 
-    padding: 100px 0;
+    padding: 50px 0;
 }
 `
 

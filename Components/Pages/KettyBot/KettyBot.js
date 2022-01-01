@@ -10,6 +10,8 @@ import VideoSection from './VideoSection/VideoSection'
 import ImageSection from './ImageSection/ImageSection'
 import LeaseLayout from '../../UI/LeaseLayout/LeaseLayout'
 import Specifications from '../../UI/Specifications/Specifications'
+import ProductColors from './ProductColors/ProductColors'
+import Usher from './Usher/Usher'
 function KettyBot({ robotData }) {
     console.log(robotData.acf.robot_flexible_content)
     const kettyBot = robotData.acf.robot_flexible_content
@@ -56,6 +58,9 @@ function KettyBot({ robotData }) {
                 theme="dark"
 
             />
+            <Usher
+                data={kettyBot[6]}
+            />
             <VideoSection
                 title={kettyBot[7].title}
                 content={kettyBot[7].video_content}
@@ -86,6 +91,9 @@ function KettyBot({ robotData }) {
                 content={kettyBot[11].video_content}
                 video={kettyBot[11].video}
                 backgroundColor="var(--offWhite)"
+            />
+            <ProductColors
+                data={kettyBot[12]}
             />
             <Specifications
                 image={kettyBot[13].image}

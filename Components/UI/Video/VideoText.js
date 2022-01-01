@@ -26,6 +26,9 @@ const Container = styled.section`
 padding: 100px 0 100px 0;
 max-width: 1000px; 
 margin: 0 auto 0 auto;
+@media(max-width: 1000px){ 
+    padding: 50px 0;
+}
 `
 const Video = styled.div`
 `
