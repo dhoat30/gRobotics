@@ -14,6 +14,7 @@ export default function Home(props) {
     title: "Contact Us | G Robotics |  Browse Robots For Restaurants, Hospitals & Warehouses",
     description: "International High-tech Enterprise that integrates R&D, design, production, and sales businesses of catering service robots together."
   }
+
   return (
     < React.Fragment >
       <SEO seo={seo} />

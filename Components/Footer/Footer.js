@@ -23,6 +23,7 @@ function Footer() {
                 <FlexBox>
                     {contactInfoCtx.contactData &&
                         <Contact
+                            phoneNumber={contactInfoCtx.contactData.acf.phone_number}
                             email={contactInfoCtx.contactData.acf.email_address}
                             location={contactInfoCtx.contactData.acf.location}
                         />
@@ -52,7 +53,7 @@ const Container = styled.section`
 const FlexBox = styled.div`
 display: flex;
 flex-direction: column;
-height: 150px;
+height: 180px;
 justify-content: space-between;
 flex-wrap: wrap;
 min-width: 200px;

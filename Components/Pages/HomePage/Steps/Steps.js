@@ -6,9 +6,7 @@ import { faLongArrowRight } from '@fortawesome/pro-light-svg-icons'
 import RowTitle from '../../../UI/Typography/Titles/RowTitle'
 function Steps({ steps }) {
 
-    console.log(steps)
     const cards = steps.map((item, index) => {
-        console.log(item)
         return <Card key={index}>
             <Step>
                 {item.step}

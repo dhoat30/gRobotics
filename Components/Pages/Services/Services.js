@@ -44,7 +44,7 @@ function Services({ services, faq }) {
 
     return (
         <React.Fragment>
-            <HeroVideo />
+            {/* <HeroVideo /> */}
             <MaxWidthContainer backgroundColor="var(--white)">
                 <ServicesContainer>
                     <RowTitle align="center">Our Services</RowTitle>

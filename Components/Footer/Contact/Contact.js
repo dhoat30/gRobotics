@@ -1,15 +1,23 @@
 import React from 'react'
 import MediumFonts from '../../UI/Typography/Paragraph/MediumFonts'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faMapMarkerAlt } from '@fortawesome/pro-solid-svg-icons'
+import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/pro-solid-svg-icons'
 import styled from 'styled-components'
 import Link from 'next/link'
-function Contact({ email, location }) {
+function Contact({ email, location, phoneNumber }) {
     return (
         <Container>
             <MediumFonts color="var(--offWhite)">Contact</MediumFonts>
 
             <Navbar>
+                <li>
+                    <Link href={`tel:${phoneNumber}`} passHref>
+                        <Anchor>
+                            <IconStyle icon={faPhoneAlt} />
+                            {phoneNumber}
+                        </Anchor>
+                    </Link>
+                </li>
                 <li>
                     <Link href={`mailto:${email}`} passHref>
                         <Anchor>

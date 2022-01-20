@@ -181,3 +181,8 @@ h5 strong {
   font-weight: 700;
   margin: 25px 0 5px 0;
 }
+
+/* media  */
+.media-container iframe {
+  width: 100%;
+}

@@ -15,7 +15,9 @@ import ContactSection from './ContactSection/ContactSection'
 import ProductCards from './ProductCards/ProductCards'
 import Slider from '../../UI/Slider/Slider'
 import Steps from './Steps/Steps'
-function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps }) {
+import RobotList from './RobotList/RobotList'
+import Media from './Media/Media'
+function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps, allRobots, media }) {
     let robots = [kettyBot, bellaBot, puduBot, holaBot]
 
     const sliderImages = heroImages.map(item => {
@@ -25,24 +27,34 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps }) {
         }
     })
 
-
+    // get hero data for home page
+    const heroData = heroImages.filter(item => {
+        if (item.slug === "all-robots") {
+            return item
+        }
+    })
     return (
 
         <Container>
-            <Slider
+            {/* <Slider
                 sliderImages={sliderImages}
-            />
+            /> */}
+            <Video video={heroData[0].acf.video} />
+
+            <RobotList allRobots={allRobots} />
             <HeroSection
-                image={kettyBot.acf.image}
-                title={kettyBot.acf.title}
-                subtitle={kettyBot.acf.subtitle}
-                backgroundColor="#FBFBFC"
+                image={holaBot.acf.image}
+                title={holaBot.acf.title}
+                subtitle={holaBot.acf.subtitle}
+                backgroundColor="#0C0D15"
                 flex="column"
                 imageHeight="100"
                 imageWidth="100"
+                color="var(--offWhite)"
                 showLink={true}
-                link="/ketty-bot"
+                link="/hola-bot"
             />
+
             {/* <img src={robotData.kettyBot.acf.robot_flexible_content[0].desktop_image} width="50%" /> */}
             <MaxWidthContainer backgroundColor="var(--silver)">
 
@@ -61,19 +73,23 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps }) {
                     />
                 </Flex>
             </MaxWidthContainer>
+
             <HeroSection
-                image={holaBot.acf.image}
-                title={holaBot.acf.title}
-                subtitle={holaBot.acf.subtitle}
-                backgroundColor="#0C0D15"
+                image={kettyBot.acf.image}
+                title={kettyBot.acf.title}
+                subtitle={kettyBot.acf.subtitle}
+                backgroundColor="#FBFBFC"
                 flex="column"
                 imageHeight="100"
                 imageWidth="100"
-                color="var(--offWhite)"
                 showLink={true}
-                link="/hola-bot"
+                link="/ketty-bot"
             />
+
             <Steps steps={steps} />
+            <MaxWidthContainer backgroundColor="white">
+                <Media media={media} />
+            </MaxWidthContainer>
             <ContactSection
                 title="Get A Quote"
                 emailTo="info@grobotics.co.nz"
