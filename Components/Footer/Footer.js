@@ -60,6 +60,6 @@ min-width: 200px;
 margin-bottom: 20px;
 `
 const LogoStyle = styled(Logo)`
-margin-bottom: 20px;
+margin-bottom: 20px 20px;
 
 `

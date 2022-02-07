@@ -11,7 +11,7 @@ import Footer from './Footer/Footer'
 function Layout(props) {
     const contactInfoCtx = useContext(ContactInfoContext)
     const loadingCtx = useContext(LoadingContext)
-
+    const [testState, setTestState] = useState('')
     useEffect(() => {
         getContactInfo()
             .then(res => {
