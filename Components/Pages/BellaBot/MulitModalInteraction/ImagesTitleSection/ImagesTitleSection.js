@@ -16,7 +16,7 @@ function ImagesTitleSection({ data, backgroundColor, theme }) {
                 <Flex>
                     <ColumnContainer>
                         <ImageStyle src={data.images[1].image}
-                            alt="hello"
+                            alt={data.title}
                             layout="fixed"
                             width="100"
                             height="100"
@@ -25,7 +25,7 @@ function ImagesTitleSection({ data, backgroundColor, theme }) {
                     </ColumnContainer>
                     <ColumnContainer>
                         <ImageStyle src={data.images[0].image}
-                            alt="hello"
+                            alt={data.title}
                             layout="fixed"
                             width="100"
                             height="100"
@@ -34,7 +34,7 @@ function ImagesTitleSection({ data, backgroundColor, theme }) {
                     </ColumnContainer>
                     <ColumnContainer>
                         <ImageStyle src={data.images[2].image}
-                            alt="hello"
+                            alt={data.title}
                             layout="fixed"
                             width="100"
                             height="100"

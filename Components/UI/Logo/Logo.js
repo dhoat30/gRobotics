@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
 
-function Logo({ className, logo }) {
-
+function Logo({ className, logo, videoLogo }) {
+    console.log(videoLogo)
     return (
         <Container className={className}>
             <ImageStyle
@@ -11,6 +11,7 @@ function Logo({ className, logo }) {
                 layout="fill"
                 alt="G Robotics Logo"
             />
+            <VideoLogoContainer dangerouslySetInnerHTML={{ __html: videoLogo }}></VideoLogoContainer>
         </Container>
     )
 }
@@ -25,3 +26,4 @@ position: relative;
 const ImageStyle = styled(Image)`
 object-fit: cover;
 `
+const VideoLogoContainer = styled.div``

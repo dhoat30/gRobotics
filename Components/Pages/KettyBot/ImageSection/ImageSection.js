@@ -13,7 +13,6 @@ function ImageSection({ image, title, content, backgroundColor, theme, flex }) {
         <MaxWidthContainer backgroundColor={backgroundColor}>
             <Container>
                 <Content>
-
                     {title && <LargeTitle align="center">{title}</LargeTitle>}
                     <ColumnTitleStyle
                         align="center"
@@ -25,6 +24,7 @@ function ImageSection({ image, title, content, backgroundColor, theme, flex }) {
                     <ImageStyle
                         src={image}
                         layout="fill"
+                        alt={title}
                     />
                 </ImageContainer>
             </Container>

@@ -13,6 +13,7 @@ function SmartExpressions({ data, backgroundColor, theme }) {
                     layout="fixed"
                     width="100"
                     height="100"
+                    alt={data.title}
                 />
 
                 <RowTitle
@@ -25,12 +26,14 @@ function SmartExpressions({ data, backgroundColor, theme }) {
                 <ImageContainer>
                     <Image src={data.images[1].image}
                         layout="fill"
+                        alt={data.title}
                     />
                 </ImageContainer>
             </Container>
             <BackgroundImageContainer>
                 <ImageStyle src={data.images[2].image}
                     layout="fill"
+                    alt={data.title}
                 />
             </BackgroundImageContainer>
 

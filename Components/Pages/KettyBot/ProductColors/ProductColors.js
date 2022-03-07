@@ -19,7 +19,7 @@ function ProductColors({ data }) {
                         <ImageContainer>
                             <Image src={data.images[2].image}
                                 layout='fill'
-
+                                alt={data.title}
                             />
                         </ImageContainer>
                     </Product>
@@ -29,7 +29,7 @@ function ProductColors({ data }) {
 
                             <Image src={data.images[0].image}
                                 layout='fill'
-
+                                alt={data.title}
                             />
                         </ImageContainer>
                     </ProductWhite>

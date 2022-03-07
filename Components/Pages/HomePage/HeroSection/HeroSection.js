@@ -67,6 +67,7 @@ function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgrou
                             layout="responsive"
                             width="100"
                             height="100"
+                            alt={title}
                         />
                     </ImageContainer>
                 </motion.div>

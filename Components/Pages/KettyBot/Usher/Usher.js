@@ -20,7 +20,7 @@ function Usher({ data }) {
                         <ImageContainer>
                             <Image src={data.images[0].image}
                                 layout='fill'
-
+                                alt={data.title}
                             />
                         </ImageContainer>
                     </Product>

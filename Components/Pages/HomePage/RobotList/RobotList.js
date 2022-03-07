@@ -11,6 +11,7 @@ function RobotList(allRobots) {
             <ImageContainer>
                 <Image src={item.acf.list_image}
                     layout='fill'
+                    alt={item.title.rendered}
                 />
             </ImageContainer>
             <Content>

@@ -16,6 +16,7 @@ export default function KettyBotPages(props) {
         < React.Fragment >
             <SEO seo={seo} />
             <KettyBot robotData={props.kettyBot} />
+            {/* ketty bot */}
         </React.Fragment >
     )
 }

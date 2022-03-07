@@ -14,6 +14,7 @@ function Light({ data, backgroundColor, theme }) {
                     layout="fixed"
                     width="100"
                     height="100"
+                    alt={data.title}
                 />
 
                 <RowTitle
@@ -29,6 +30,7 @@ function Light({ data, backgroundColor, theme }) {
                             layout="responsive"
                             width="100"
                             height="100"
+                            alt={data.title}
                         />
                     </ImageContainer>
                     <ImageContainer>
@@ -43,6 +45,7 @@ function Light({ data, backgroundColor, theme }) {
                             layout="responsive"
                             width="100"
                             height="100"
+                            alt={data.title}
                         />
                     </ImageContainer>
                 </Flex>

@@ -65,7 +65,7 @@ function NavbarComponent() {
             <Link href="/" passHref>
                 <a>
                     {contactInfoCtx.contactData ?
-                        <Logo logo={contactInfoCtx.contactData.acf.logo} /> :
+                        <Logo logo={contactInfoCtx.contactData.acf.logo} videoLogo={contactInfoCtx.contactData.acf.logo_video} /> :
                         null
                     }
                 </a>

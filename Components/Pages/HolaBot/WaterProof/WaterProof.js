@@ -34,7 +34,7 @@ function WaterProof({ title, content, image, video, className, theme, background
                     <ImageContainer>
                         <ImageStyle
                             src={image}
-                            // alt={content}
+                            alt={title}
                             layout="fill"
                             quality="100"
                         />

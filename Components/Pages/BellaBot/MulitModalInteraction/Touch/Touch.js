@@ -14,6 +14,7 @@ function Touch({ data, backgroundColor, theme }) {
                     layout="fixed"
                     width="100"
                     height="100"
+                    alt={data.title}
                 />
 
                 <RowTitle
@@ -28,6 +29,7 @@ function Touch({ data, backgroundColor, theme }) {
                         layout="responsive"
                         width="100"
                         height="100"
+                        alt={data.title}
                     />
                 </ImageContainer>
 

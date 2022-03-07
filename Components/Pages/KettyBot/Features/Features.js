@@ -14,6 +14,7 @@ function Features({ image, images, className, backgroundColor }) {
                 layout="fixed"
                 width="50"
                 height="50"
+                alt={item.image.title}
             />
             <Subtitle align="center" color="var(--fontGrey)">{item.image.title}</Subtitle>
 
