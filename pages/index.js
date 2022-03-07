@@ -62,7 +62,6 @@ export async function getStaticProps(context) {
       steps: steps,
       media: media
     },
-    revalidate: 86400
+    revalidate: 604800
   }
-
 }

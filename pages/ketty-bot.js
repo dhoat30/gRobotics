@@ -28,6 +28,6 @@ export async function getStaticProps(context) {
         props: {
             kettyBot: kettyBot[0]
         },
-        revalidate: 86400
+        revalidate: 604800
     }
 }
