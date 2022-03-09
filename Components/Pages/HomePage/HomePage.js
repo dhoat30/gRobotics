@@ -39,6 +39,7 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps, all
             {/* <Slider
                 sliderImages={sliderImages}
             /> */}
+
             <Video video={heroData[0].acf.video} />
 
             <RobotList allRobots={allRobots} />
