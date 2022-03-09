@@ -31,6 +31,6 @@ export async function getStaticProps(context) {
     props: {
       faq: services
     },
-    revalidate: 86400
+    revalidate: 10
   }
 }

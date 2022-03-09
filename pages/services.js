@@ -32,7 +32,7 @@ export async function getStaticProps(context) {
             services: services,
             faq: faq
         },
-        revalidate: 86400
+        revalidate: 10
     }
 
 }

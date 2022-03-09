@@ -29,6 +29,6 @@ export async function getStaticProps(context) {
         props: {
             privacyPolicy: privacyPolicy[0]
         },
-        revalidate: 86400
+        revalidate: 10
     }
 }
