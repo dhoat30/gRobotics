@@ -21,7 +21,7 @@ export default function PuduBotPage(props) {
     )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     // get home page data using category from hero images 
     const services = await getRobot('holabot')
 
@@ -29,6 +29,5 @@ export async function getStaticProps(context) {
         props: {
             robotData: services[0]
         },
-        revalidate: 604800
     }
 }

@@ -23,7 +23,7 @@ export default function Home(props) {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   // get home page data using category from hero images 
   const services = await getFaq()
 
@@ -31,6 +31,5 @@ export async function getStaticProps(context) {
     props: {
       faq: services
     },
-    revalidate: 604800
   }
 }

@@ -22,13 +22,12 @@ export default function Home(props) {
     )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     // get home page data using category from hero images 
     const services = await getRobot('bellabot')
     return {
         props: {
             bellaBot: services[0]
         },
-        revalidate: 604800
     }
 }

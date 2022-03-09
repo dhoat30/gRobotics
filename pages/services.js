@@ -23,7 +23,7 @@ export default function Home(props) {
     )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const services = await getServices()
     const faq = await getFaq()
 
@@ -32,7 +32,6 @@ export async function getStaticProps(context) {
             services: services,
             faq: faq
         },
-        revalidate: 604800
     }
 
 }

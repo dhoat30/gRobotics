@@ -40,7 +40,7 @@ export default function Home(props) {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   // get home page data using category from hero images 
   // const homePage = await getPage('home-page')
   const kettyBot = await getHomeRobot('kettybot')
@@ -61,7 +61,6 @@ export async function getStaticProps(context) {
       heroImage: heroImages,
       steps: steps,
       media: media
-    },
-    revalidate: 604800
+    }
   }
 }

@@ -21,13 +21,12 @@ export default function KettyBotPages(props) {
     )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     // get home page data using category from hero images 
     const kettyBot = await getRobot('kettybot')
     return {
         props: {
             kettyBot: kettyBot[0]
         },
-        revalidate: 604800
     }
 }
