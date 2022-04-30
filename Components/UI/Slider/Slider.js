@@ -8,6 +8,7 @@ function Slider({ sliderImages }) {
     // console.log(sliderImages)
     const slide = sliderImages.reverse().map((item, index) => {
         // console.log(item.link)
+
         return <Carousel.Item key={index}>
             <Link href={item.link} passHref>
                 <a>
@@ -22,7 +23,7 @@ function Slider({ sliderImages }) {
     })
     return (
         <Container>
-            <Carousel indicators={true}>
+            <Carousel indicators={false}>
                 {slide}
             </Carousel>
         </Container>

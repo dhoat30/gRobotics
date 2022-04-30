@@ -33,16 +33,18 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps, all
             return item
         }
     })
+    console.log(sliderImages[4])
     return (
 
         <Container>
-            {/* <Slider
-                sliderImages={sliderImages}
-            /> */}
 
             <Video video={heroData[0].acf.video} />
+            <Slider
+                sliderImages={sliderImages}
+            />
 
-            <RobotList allRobots={allRobots} />
+
+            {/* <RobotList allRobots={allRobots} /> */}
             <HeroSection
                 image={holaBot.acf.image}
                 title={holaBot.acf.title}
