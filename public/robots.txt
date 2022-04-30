@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://grobotics.co.nz
+
+# Sitemaps
+Sitemap: https://grobotics.co.nz/sitemap.xml
