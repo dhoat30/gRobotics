@@ -83,13 +83,14 @@ function NavbarComponent() {
                     </MenuListItems>
                 </MobileMenuContainer> : null
             }
-            <IconStyle icon={showMobileMenu ? faTimes : faBars} onClick={() => setShowMobileMenu(showMobileMenu ? false : true)} />
+            <IconStyle style={{ 'fontSize': '2rem' }} icon={showMobileMenu ? faTimes : faBars} onClick={() => setShowMobileMenu(showMobileMenu ? false : true)} />
         </NavbarStyle>
     )
 }
 
 export default NavbarComponent
 const NavbarStyle = styled(Navbar)`
+height: 40px;
 padding: 0;
 display: flex;
 flex-direction: row;
@@ -124,7 +125,7 @@ const MobileMenuContainer = styled.div`
 `
 const IconStyle = styled(FontAwesomeIcon)`
     color: white; 
-    font-size: 2rem;
+ 
     cursor: pointer; 
     @media (min-width: 1000px){ 
         display: none; 

@@ -1,9 +1,7 @@
-import cookie from 'cookie'
-import Head from 'next/head'
-import React, { useContext, useEffect } from 'react'
+
+import React from 'react'
 import HomePage from '../Components/Pages/HomePage/HomePage'
 import getPage from '../util/get-page'
-import getRobot from '../util/get-robot'
 import getHomeRobot from '../util/get-home-robot'
 import SEO from '../Components/SEO'
 import getHeroImage from '../util/get-hero-images'

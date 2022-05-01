@@ -19,8 +19,8 @@ function Logo({ className, logo, videoLogo }) {
 export default Logo
 
 const Container = styled.div`
-width: 230px;
-height: 40px;
+width: 180px;
+height: 30px;
 position: relative;
 `
 const ImageStyle = styled(Image)`
