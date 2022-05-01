@@ -26,7 +26,7 @@ export default function PuduBotPage(props) {
     )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     // get home page data using category from hero images 
     const services = await getRobot('pudubot')
     const contactData = await getContactInfo()
@@ -37,6 +37,6 @@ export async function getStaticProps(context) {
             contactData: contactData[0]
 
         },
-        revalidate: 86400
+
     }
 }

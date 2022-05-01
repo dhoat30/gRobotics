@@ -1,12 +1,12 @@
 import { createContext, useState, useEffect } from 'react'
 
 const ContactInfoContext = createContext({
-    contactData: null,
+    contactData: false,
     getContactData: function (contactData) { },
 })
 
 export function ContactInfoContextProvider(props) {
-    const [contactData, setContactData] = useState()
+    const [contactData, setContactData] = useState(false)
 
     // get contact data
     function getContactDataHandler(contactData) {

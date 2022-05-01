@@ -1,5 +1,4 @@
-import cookie from 'cookie'
-import Head from 'next/head'
+
 import React, { useContext, useEffect } from 'react'
 import BellaBot from '../../Components/Pages/BellaBot/BellaBot'
 import SEO from '../../Components/SEO'
@@ -30,7 +29,7 @@ export default function Home(props) {
     )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     // get home page data using category from hero images 
     const services = await getRobot('bellabot')
     const contactData = await getContactInfo()
@@ -40,7 +39,6 @@ export async function getStaticProps(context) {
             bellaBot: services[0],
             contactData: contactData[0]
 
-        },
-        revalidate: 10
+        }
     }
 }

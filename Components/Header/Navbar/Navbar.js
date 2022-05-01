@@ -44,9 +44,15 @@ function NavbarComponent() {
 
     // contact context 
     const contactInfoCtx = useContext(ContactInfoContext)
+
+    if (contactInfoCtx.contactData === 'false') {
+        return
+    }
+    console.log(contactInfoCtx)
+
     // hide menu on link click
     const linkClickHandler = (value) => {
-        console.log("link clicked")
+
         setShowMobileMenu(value)
     }
     // map menu array  object
@@ -83,7 +89,7 @@ function NavbarComponent() {
                     </MenuListItems>
                 </MobileMenuContainer> : null
             }
-            <IconStyle style={{ 'fontSize': '2rem' }} icon={showMobileMenu ? faTimes : faBars} onClick={() => setShowMobileMenu(showMobileMenu ? false : true)} />
+            <IconStyle style={{ 'fontSize': '2rem', 'width': "20px" }} icon={showMobileMenu ? faTimes : faBars} onClick={() => setShowMobileMenu(showMobileMenu ? false : true)} />
         </NavbarStyle>
     )
 }
