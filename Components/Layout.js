@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import ContactInfoContext from '../store/contact-info-context'
 import LoadingOverlay from './UI/LoadingOverlay/LoadingOverlay'
@@ -10,20 +9,8 @@ import Footer from './Footer/Footer'
 
 
 function Layout(props) {
-    const contactInfoCtx = useContext(ContactInfoContext)
     const loadingCtx = useContext(LoadingContext)
-    const [testState, setTestState] = useState('')
-    useEffect(() => {
-        getContactInfo()
-            .then(res => {
-                if (res) {
-                    contactInfoCtx.getContactData(res[0])
-                }
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [])
+
 
     return (
         <div>

@@ -1,11 +1,13 @@
 
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import HomePage from '../Components/Pages/HomePage/HomePage'
 import getPage from '../util/get-page'
 import getHomeRobot from '../util/get-home-robot'
 import SEO from '../Components/SEO'
 import getHeroImage from '../util/get-hero-images'
 import getMedia from '../util/get-media'
+import getContactInfo from '../util/get-contact-info'
+import ContactInfoContext from '../store/contact-info-context'
 
 export default function Home(props) {
   const seo = {
@@ -18,6 +20,12 @@ export default function Home(props) {
     props.puduBot,
     props.holaBot
   ]
+  const contactInfoCtx = useContext(ContactInfoContext)
+
+  useEffect(() => {
+    contactInfoCtx.getContactData(props.contactData)
+  }, [])
+
   return (
     < React.Fragment >
       <SEO
@@ -48,6 +56,7 @@ export async function getStaticProps(context) {
   const heroImages = await getHeroImage('home-page')
   const steps = await getPage('robot-installation-steps')
   const media = await getMedia()
+  const contactData = await getContactInfo()
 
   return {
     props: {
@@ -58,7 +67,8 @@ export async function getStaticProps(context) {
       holaBot: holaBot[0],
       heroImage: heroImages,
       steps: steps,
-      media: media
+      media: media,
+      contactData: contactData[0]
     },
     revalidate: 86400
   }

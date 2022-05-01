@@ -1,9 +1,10 @@
-import Head from 'next/head'
 import React, { useContext, useEffect } from 'react'
 import getRobot from '../util/get-robot'
-import PuduBot from '../Components/Pages/PuduBot/PuduBot'
 import HolaBot from '../Components/Pages/HolaBot/HolaBot'
 import SEO from '../Components/SEO'
+import getContactInfo from '../util/get-contact-info'
+import ContactInfoContext from '../store/contact-info-context'
+
 export default function PuduBotPage(props) {
     console.log(props)
     const seo = {
@@ -11,6 +12,12 @@ export default function PuduBotPage(props) {
         description: props.robotData.yoast_head_json.og_description,
         imageSrc: props.robotData.yoast_head_json.og_image[0].url
     }
+    const contactInfoCtx = useContext(ContactInfoContext)
+
+    useEffect(() => {
+        contactInfoCtx.getContactData(props.contactData)
+    }, [])
+
     return (
         < React.Fragment >
             <SEO
@@ -24,10 +31,13 @@ export default function PuduBotPage(props) {
 export async function getStaticProps(context) {
     // get home page data using category from hero images 
     const services = await getRobot('holabot')
+    const contactData = await getContactInfo()
 
     return {
         props: {
-            robotData: services[0]
+            robotData: services[0],
+            contactData: contactData[0]
+
         },
         revalidate: 86400
     }
