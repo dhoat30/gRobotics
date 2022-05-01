@@ -8,6 +8,7 @@ import Header from './Header/Header'
 import getContactInfo from '../util/get-contact-info'
 import Footer from './Footer/Footer'
 
+
 function Layout(props) {
     const contactInfoCtx = useContext(ContactInfoContext)
     const loadingCtx = useContext(LoadingContext)
