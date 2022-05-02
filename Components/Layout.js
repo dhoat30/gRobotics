@@ -1,10 +1,8 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import ContactInfoContext from '../store/contact-info-context'
 import LoadingOverlay from './UI/LoadingOverlay/LoadingOverlay'
 import LoadingContext from '../store/loading-context'
 import Header from './Header/Header'
-import getContactInfo from '../util/get-contact-info'
 import Footer from './Footer/Footer'
 
 

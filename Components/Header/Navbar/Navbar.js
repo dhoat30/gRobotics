@@ -39,6 +39,7 @@ const menuItems = [{
 ]
 
 function NavbarComponent() {
+
     // use state
     const [showMobileMenu, setShowMobileMenu] = useState(false)
 

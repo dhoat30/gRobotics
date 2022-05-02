@@ -26,6 +26,8 @@ export default function Home(props) {
     contactInfoCtx.getContactData(props.contactData)
   }, [])
 
+  console.log(contactInfoCtx)
+
   return (
     < React.Fragment >
       <SEO

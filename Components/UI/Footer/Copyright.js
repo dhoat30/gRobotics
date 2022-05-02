@@ -5,7 +5,7 @@ function Copyright({ copyright }) {
     return (
         <Container>
             <Paragraph color="var(--fontGrey)"><Span>{copyright}</Span>
-                <Anchor href="https://webduel.co.nz" target="_blank">Built By Web<Duel>DUEL</Duel></Anchor></Paragraph>
+                <Anchor href="https://webduel.co.nz" target="_blank" rel="nofollow">Built By Web<Duel>DUEL</Duel></Anchor></Paragraph>
         </Container>
     )
 }
@@ -31,6 +31,8 @@ const Paragraph = styled.div`
 color: var(--fontGrey);
 display: flex;
 justify-content: space-between;
+flex-wrap: wrap;
+font-size: 0.8rem;
 `
 const Duel = styled.span`
 color: var(--green);

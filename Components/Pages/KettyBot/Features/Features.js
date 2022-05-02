@@ -3,7 +3,7 @@ import MaxWidthContainer from '../../../UI/MaxWidthContainer/MaxWidthContainer'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Subtitle from '../../../UI/Typography/Titles/Subtitle'
-import Parallax from 'react-rellax'
+
 
 function Features({ image, images, className, backgroundColor }) {
     const imagesList = images.map(item => {
