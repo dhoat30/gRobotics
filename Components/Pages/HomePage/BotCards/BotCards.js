@@ -49,9 +49,9 @@ function BotCards({ title, subtitle, image, link }) {
                     initial="hidden"
                 > */}
                 <Link href={link} passHref>
-                    <AnchorButton align="center">
+                    <a className="anchor-link" align="center">
                         Learn More
-                    </AnchorButton>
+                    </a>
                 </Link>
                 {/* </motion.div> */}
             </Content>

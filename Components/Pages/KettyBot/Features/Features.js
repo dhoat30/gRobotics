@@ -6,6 +6,7 @@ import Subtitle from '../../../UI/Typography/Titles/Subtitle'
 
 
 function Features({ image, images, className, backgroundColor }) {
+    console.log(images)
     const imagesList = images.map(item => {
         return <ImageContainer key={item.image.ID}>
             <Image
@@ -13,7 +14,7 @@ function Features({ image, images, className, backgroundColor }) {
                 layout="fixed"
                 width="50"
                 height="50"
-                alt={item.image.title}
+                alt={item.image.alt ? item.image.alt : item.image.title}
             />
             <Subtitle align="center" color="var(--fontGrey)">{item.image.title}</Subtitle>
 
@@ -31,6 +32,7 @@ function Features({ image, images, className, backgroundColor }) {
                         layout="responsive"
                         width="100"
                         height="250"
+                        alt={image.title}
                     />
 
                 </AbsoluteImage>

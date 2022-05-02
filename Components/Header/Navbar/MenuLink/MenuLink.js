@@ -8,7 +8,7 @@ function MenuLink({ title, link, hideMobileMenu }) {
     }
     return (
         <List>
-            <Link href={link} >
+            <Link href={link} passHref >
                 <Anchor onClick={anchorClickHandler}>
                     {title}
                 </Anchor>

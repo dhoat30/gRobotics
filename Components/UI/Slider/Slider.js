@@ -6,14 +6,14 @@ import styled from 'styled-components'
 import Link from 'next/link'
 function Slider({ sliderImages }) {
     const slide = sliderImages.reverse().map((item, index) => {
-
+        console.log(item)
         return <Carousel.Item key={index}>
             <Link href={item.link} passHref>
                 <a>
                     <img
                         className="d-block w-100"
-                        src={item.desktopImage}
-                        alt="First slide"
+                        src={item.desktopImage.url}
+                        alt={item.desktopImage.alt}
                     />
                 </a>
             </Link>

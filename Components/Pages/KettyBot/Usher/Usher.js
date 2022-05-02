@@ -29,7 +29,7 @@ function Usher({ data }) {
 
                             <Image src={data.images[1].image}
                                 layout='fill'
-
+                                alt={data.title}
                             />
                         </ImageContainer>
                     </ProductWhite>

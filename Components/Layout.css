@@ -186,3 +186,14 @@ h5 strong {
 .media-container iframe {
   width: 100%;
 }
+
+/* anchor link  */
+.anchor-link {
+  color: var(--green);
+  font-size: 1.2rem;
+  display: block;
+  margin-top: 10px;
+}
+.anchor-link:hover {
+  text-decoration: underline;
+}

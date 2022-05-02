@@ -20,12 +20,5 @@ const AnchorButton = React.forwardRef(({ children, className, align, href }, ref
 AnchorButton.displayName = 'AnchorButton'
 export default AnchorButton
 const Anchor = styled.a`
-color: var(--green);
-font-size: 1.2rem;
-display: block;
-margin-top: 10px;
-text-align: ${props => props.align ? props.align : "left"}; 
-&:hover{ 
-    text-decoration: underline; 
-}
+
 `

@@ -7,6 +7,7 @@ import Subtitle from '../../../../UI/Typography/Titles/Subtitle'
 
 function Light({ data, backgroundColor, theme }) {
     let fontColor = theme === "dark" ? "var(--offWhite)" : "var(--darkGrey)"
+    console.log(data)
     return (
         <MaxWidthContainer backgroundColor={backgroundColor}>
             <Container>
@@ -38,6 +39,7 @@ function Light({ data, backgroundColor, theme }) {
                             layout="responsive"
                             width="100"
                             height="100"
+                            alt={data.title}
                         />
                     </ImageContainer>
                     <ImageContainer>

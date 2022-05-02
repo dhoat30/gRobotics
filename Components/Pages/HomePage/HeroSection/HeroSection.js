@@ -52,7 +52,7 @@ function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgrou
                         //     animate={animation}
                         //     initial="hidden"
                         // >
-                        <Link href={link} passHref><AnchorButton align="center">Learn More</AnchorButton></Link>
+                        <Link href={link} passHref><a className='anchor-link' align="center">Learn More</a></Link>
                         // </motion.div>
                     }
                 </Content>
