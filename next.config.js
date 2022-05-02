@@ -5,23 +5,23 @@ module.exports = (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
       env: {
-        url: "https://greensrobotics.co.nz",
+        url: "https://data.grobotics.co.nz",
         SITE_URL: "http://localhost:3000"
       },
       reactStrictMode: true,
       images: {
-        domains: ['greensrobotics.co.nz']
+        domains: ['data.grobotics.co.nz']
       }
     }
   }
   return {
     env: {
-      url: "https://greensrobotics.co.nz",
+      url: "https://data.grobotics.co.nz",
       SITE_URL: "https://grobotics.co.nz"
     },
     reactStrictMode: true,
     images: {
-      domains: ['greensrobotics.co.nz']
+      domains: ['data.grobotics.co.nz']
     }
   }
 }
