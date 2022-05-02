@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 // import { Stream } from "@cloudflare/stream-react";
 import styled from 'styled-components'
-function Video({ video }) {
+function Video({ video, videoFile }) {
+    console.log(videoFile)
     // const videoIdOrSignedUrl = "019cf67db448787e33fd0b5dc237294e";
     const [showVideo, setShowVideo] = useState(false)
     useEffect(() => {
@@ -9,10 +10,14 @@ function Video({ video }) {
     }, [])
     return (
         <Container className="just-video">
-            {showVideo ? <div
+
+
+            {video ? <div
                 dangerouslySetInnerHTML={{ __html: video }}
             ></div>
-                : <VideoContainer></VideoContainer>
+                : <video width="100%" autoPlay loop muted>
+                    <source src={videoFile.url} type="video/mp4"></source>
+                </video>
             }
 
             {/* <div>

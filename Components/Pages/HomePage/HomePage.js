@@ -19,7 +19,6 @@ import RobotList from './RobotList/RobotList'
 import Media from './Media/Media'
 function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps, allRobots, media }) {
     let robots = [kettyBot, bellaBot, puduBot, holaBot]
-
     const sliderImages = heroImages.map(item => {
         return {
             link: item.acf.link,
@@ -29,6 +28,7 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps, all
 
     // get hero data for home page
     const heroData = heroImages.filter(item => {
+        // console.log(item)
         if (item.slug === "all-robots") {
             return item
         }
@@ -37,7 +37,10 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps, all
 
         <Container>
 
-            <Video video={heroData[0].acf.video} />
+            <Video
+                videoFile={heroData[0].acf.video_file}
+                video={heroData[0].acf.video} />
+
             <Slider
                 sliderImages={sliderImages}
             />
