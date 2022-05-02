@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faTimes } from '@fortawesome/pro-duotone-svg-icons'
+
 import Navbar from 'react-bootstrap/Navbar'
 import Logo from '../../UI/Logo/Logo'
 import Link from 'next/link'
@@ -90,7 +89,31 @@ function NavbarComponent() {
                     </MenuListItems>
                 </MobileMenuContainer> : null
             }
-            <IconStyle style={{ 'fontSize': '2rem', 'width': "20px" }} icon={showMobileMenu ? faTimes : faBars} onClick={() => setShowMobileMenu(showMobileMenu ? false : true)} />
+            {showMobileMenu ?
+
+
+                <CloseIcon
+
+                    onClick={() => setShowMobileMenu(showMobileMenu ? false : true)}
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.143 24">
+                    <path id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" d="M23.39,21.072l6.99-6.99a1.638,1.638,0,1,0-2.316-2.316l-6.99,6.99-6.99-6.99a1.638,1.638,0,1,0-2.316,2.316l6.99,6.99-6.99,6.99a1.638,1.638,0,0,0,2.316,2.316l6.99-6.99,6.99,6.99a1.638,1.638,0,0,0,2.316-2.316Z" transform="translate(-11.285 -11.289)" />
+
+
+                </CloseIcon>
+                :
+                <IconStyle
+                    onClick={() => setShowMobileMenu(showMobileMenu ? false : true)}
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.143 24">
+                    <g id="Icon_ionic-ios-menu" data-name="Icon ionic-ios-menu" transform="translate(-4.5 -10.125)">
+                        <path id="Path_9" data-name="Path 9" d="M43.929,13.554H6.214A1.719,1.719,0,0,1,4.5,11.839h0a1.719,1.719,0,0,1,1.714-1.714H43.929a1.719,1.719,0,0,1,1.714,1.714h0A1.719,1.719,0,0,1,43.929,13.554Z" />
+                        <path id="Path_10" data-name="Path 10" d="M43.929,20.3H6.214A1.719,1.719,0,0,1,4.5,18.589h0a1.719,1.719,0,0,1,1.714-1.714H43.929a1.719,1.719,0,0,1,1.714,1.714h0A1.719,1.719,0,0,1,43.929,20.3Z" transform="translate(0 3.536)" />
+                        <path id="Path_11" data-name="Path 11" d="M43.929,27.054H6.214A1.719,1.719,0,0,1,4.5,25.339h0a1.719,1.719,0,0,1,1.714-1.714H43.929a1.719,1.719,0,0,1,1.714,1.714h0A1.719,1.719,0,0,1,43.929,27.054Z" transform="translate(0 7.071)" />
+                    </g>
+                </IconStyle>
+            }
+
+
+
         </NavbarStyle>
     )
 }
@@ -130,11 +153,19 @@ display: flex;
 const MobileMenuContainer = styled.div`
 
 `
-const IconStyle = styled(FontAwesomeIcon)`
+const IconStyle = styled.svg`
     color: white; 
- 
+    width: 30px;
     cursor: pointer; 
+        path{ 
+        fill: white; 
+    }
+    
+   
     @media (min-width: 1000px){ 
         display: none; 
     }
+`
+const CloseIcon = styled(IconStyle)`
+
 `

@@ -6,8 +6,7 @@ import PrimaryButton from '../Buttons/PrimaryButton'
 import Errors from '../Notifications/Errors/Errors'
 import LoadingOverlay from '../LoadingOverlay/LoadingOverlay'
 import Select from '../Input/Select'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSpinner } from '@fortawesome/pro-duotone-svg-icons'
+
 
 function ContactForm({ emailTo, emailRouteUrl, cancelPass, dropShadow, className }) {
     const [enteredName, setEnteredName] = useState('')
@@ -179,7 +178,7 @@ function ContactForm({ emailTo, emailRouteUrl, cancelPass, dropShadow, className
 
             <ButtonContainer>
                 <PrimaryButton>
-                    {showLoading && <IconStyle spin icon={faSpinner} />}
+                    {/* {showLoading && <IconStyle spin icon={faSpinner} />} */}
                     {buttonMessage}
                 </PrimaryButton>
                 <Errors>{errorMessage}</Errors>
@@ -215,6 +214,6 @@ const InputContainer = styled.div`
 margin: 15px 0; 
 width: 100%; 
 `
-const IconStyle = styled(FontAwesomeIcon)`
-margin-right: 5px;
-`
+// const IconStyle = styled(FontAwesomeIcon)`
+// margin-right: 5px;
+// `

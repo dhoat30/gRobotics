@@ -1,7 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
-import { faSpinner } from '@fortawesome/pro-duotone-svg-icons'
 
 function LoadingOverlay(props) {
 
@@ -9,7 +7,7 @@ function LoadingOverlay(props) {
         <Container>
             {props.show ?
                 <Overlay>
-                    <IconStyle icon={faSpinner} spin className={props.className} size="5x" />
+                    {/* <IconStyle icon={faSpinner} spin className={props.className} size="5x" /> */}
                 </Overlay> :
                 null
             }
@@ -35,7 +33,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 `
-const IconStyle = styled(FontAwesomeIcon)`
-color: var(--darkGreen);
-position: absolute;
-`
+// const IconStyle = styled(FontAwesomeIcon)`
+// color: var(--darkGreen);
+// position: absolute;
+// `

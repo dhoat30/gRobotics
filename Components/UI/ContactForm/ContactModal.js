@@ -2,13 +2,13 @@ import React from 'react'
 import ContactForm from './ContactForm'
 import ColumnTitle from '../Typography/Titles/ColumnTitle'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/pro-light-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faTimes } from '@fortawesome/pro-light-svg-icons'
 function ContactModal({ title, showModal, setShowContactModal, emailTo, emailRouteUrl }) {
     return (
         <Container>
 
-            <IconStyle icon={faTimes} onClick={() => setShowContactModal(false)} />
+            {/* <IconStyle icon={faTimes} onClick={() => setShowContactModal(false)} /> */}
 
             <ColumnTitleStyle align="center">{title}</ColumnTitleStyle>
             <ContactFormStyle dropShadow={false}
@@ -41,10 +41,10 @@ const Container = styled.div`
         max-height: 600px; 
     }
 `
-const IconStyle = styled(FontAwesomeIcon)`
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 2rem; 
-    cursor: pointer;
-`
+// const IconStyle = styled(FontAwesomeIcon)`
+//     position: absolute;
+//     right: 10px;
+//     top: 10px;
+//     font-size: 2rem; 
+//     cursor: pointer;
+// `
