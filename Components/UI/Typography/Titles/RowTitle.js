@@ -1,49 +1,49 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+// import { motion, useAnimation } from 'framer-motion'
+// import { useInView } from 'react-intersection-observer'
 
 function SectionTitle(props) {
-    const { ref, inView } = useInView()
-    const animation = useAnimation()
+    // const { ref, inView } = useInView()
+    // const animation = useAnimation()
 
-    useEffect(() => {
-        if (inView) {
-            animation.start({
-                y: 0,
-                opacity: 1,
-                transition: {
-                    duration: 1
-                }
-            })
-        }
+    // useEffect(() => {
+    //     if (inView) {
+    //         animation.start({
+    //             y: 0,
+    //             opacity: 1,
+    //             transition: {
+    //                 duration: 1
+    //             }
+    //         })
+    //     }
 
-    }, [inView])
+    // }, [inView])
 
-    const variants = {
-        hidden: {
-            y: 100,
-            opacity: 0
-        }
-    }
+    // const variants = {
+    //     hidden: {
+    //         y: 100,
+    //         opacity: 0
+    //     }
+    // }
     let colorClass = props.theme === 'dark' ? 'light-strong-color' : null
     return (
-        <motion.div ref={ref}
-            variants={variants}
-            animate={animation}
-            initial="hidden"
+        // <motion.div ref={ref}
+        //     variants={variants}
+        //     animate={animation}
+        //     initial="hidden"
+        // >
+        <Container
+            align={props.align}
+            fontWeight={props.fontWeight}
+            color={props.color}
+            dangerouslySetInnerHTML={{ __html: props.children }}
+            showUnderline={props.showUnderline}
+            className={`${props.className} ${colorClass}`}
         >
-            <Container
-                align={props.align}
-                fontWeight={props.fontWeight}
-                color={props.color}
-                dangerouslySetInnerHTML={{ __html: props.children }}
-                showUnderline={props.showUnderline}
-                className={`${props.className} ${colorClass}`}
-            >
-            </Container>
+        </Container>
 
-        </motion.div>
+        // </motion.div>
     )
 }
 

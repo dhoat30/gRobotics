@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import MaxWidthContainer from '../../../UI/MaxWidthContainer/MaxWidthContainer'
 import ColumnTitle from '../../../UI/Typography/Titles/ColumnTitle'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { useAnimation } from 'framer-motion'
+// import { motion } from 'framer-motion'
+// import { useInView } from 'react-intersection-observer'
+// import { useAnimation } from 'framer-motion'
 
 function RGBD({ title, content, image, video, className, theme, backgroundColor, subtitle }) {
 
@@ -15,39 +15,39 @@ function RGBD({ title, content, image, video, className, theme, backgroundColor,
             <Container className={className} >
 
                 {image &&
-                    <motion.div>
-                        <ImageContainer
-                            className="image-animation">
-                            <ImageStyle
-                                src={image}
-                                alt={content}
-                                width="100"
-                                height="100"
-                                layout="fill"
-                                quality="100"
-                            />
-                        </ImageContainer>
-                    </motion.div>
+                    // <motion.div>
+                    <ImageContainer
+                        className="image-animation">
+                        <ImageStyle
+                            src={image}
+                            alt={content}
+                            width="100"
+                            height="100"
+                            layout="fill"
+                            quality="100"
+                        />
+                    </ImageContainer>
+                    // </motion.div>
                 }
 
                 <Video dangerouslySetInnerHTML={{ __html: video }}>
                 </Video>
 
-                <motion.div >
-                    <LargeTitle
-                        theme={theme}
-                        color={theme === 'dark' ? 'var(--offWhite)' : "var(--darkGrey)"}
-                        align="center">{title}</LargeTitle>
-                </motion.div>
+                {/* <motion.div > */}
+                <LargeTitle
+                    theme={theme}
+                    color={theme === 'dark' ? 'var(--offWhite)' : "var(--darkGrey)"}
+                    align="center">{title}</LargeTitle>
+                {/* </motion.div> */}
 
-                <motion.div >
-                    <ColumnTitleStyle
-                        theme={theme}
-                        align="center"
-                        color="var(--lightGrey)">
-                        {content}
-                    </ColumnTitleStyle>
-                </motion.div>
+                {/* <motion.div > */}
+                <ColumnTitleStyle
+                    theme={theme}
+                    align="center"
+                    color="var(--lightGrey)">
+                    {content}
+                </ColumnTitleStyle>
+                {/* </motion.div> */}
                 <Sub dangerouslySetInnerHTML={{ __html: subtitle }}></Sub>
             </Container>
         </MaxWidthContainer>

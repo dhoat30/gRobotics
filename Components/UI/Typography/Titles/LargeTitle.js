@@ -1,47 +1,47 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+// import { motion, useAnimation } from 'framer-motion'
+// import { useInView } from 'react-intersection-observer'
 
 function LargeTitle(props) {
     let colorClass = props.theme === 'dark' ? 'light-strong-color' : null
-    const { ref, inView } = useInView()
-    const animation = useAnimation()
+    // const { ref, inView } = useInView()
+    // const animation = useAnimation()
 
-    useEffect(() => {
-        if (inView) {
-            animation.start({
-                y: 0,
-                opacity: 1,
-                transition: {
-                    duration: 1,
-                    ease: "easeOut"
-                }
-            })
-        }
+    // useEffect(() => {
+    //     if (inView) {
+    //         animation.start({
+    //             y: 0,
+    //             opacity: 1,
+    //             transition: {
+    //                 duration: 1,
+    //                 ease: "easeOut"
+    //             }
+    //         })
+    //     }
 
-    }, [inView])
+    // }, [inView])
 
-    const variants = {
-        hidden: {
-            y: 100,
-            opacity: 0
-        }
-    }
+    // const variants = {
+    //     hidden: {
+    //         y: 100,
+    //         opacity: 0
+    //     }
+    // }
     return (
-        <motion.div
-            style={style}
-            ref={ref}
-            variants={variants}
-            animate={animation}
-            initial="hidden"
-        >
-            <Container
+        // <motion.div
+        //     style={style}
+        //     ref={ref}
+        //     variants={variants}
+        //     animate={animation}
+        //     initial="hidden"
+        // >
+        <Container
 
-                dangerouslySetInnerHTML={{ __html: props.children }}
-                className={`${props.className}`} align={props.align} color={props.color}>
-            </Container>
-        </motion.div>
+            dangerouslySetInnerHTML={{ __html: props.children }}
+            className={`${props.className}`} align={props.align} color={props.color}>
+        </Container>
+        // </motion.div>
     )
 }
 

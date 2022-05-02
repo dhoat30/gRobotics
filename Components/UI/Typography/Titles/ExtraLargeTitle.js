@@ -5,42 +5,42 @@ import { useInView } from 'react-intersection-observer'
 
 
 function ExtraLargeTitle({ children, align, color, className, theme }) {
-    const { ref, inView } = useInView()
-    const animation = useAnimation()
+    // const { ref, inView } = useInView()
+    // const animation = useAnimation()
 
-    useEffect(() => {
-        if (inView) {
-            animation.start({
-                y: 0,
-                opacity: 1,
-                transition: {
-                    duration: 1,
-                    when: "beforeChildren",
-                }
-            })
-        }
+    // useEffect(() => {
+    //     if (inView) {
+    //         animation.start({
+    //             y: 0,
+    //             opacity: 1,
+    //             transition: {
+    //                 duration: 1,
+    //                 when: "beforeChildren",
+    //             }
+    //         })
+    //     }
 
-    }, [inView])
+    // }, [inView])
 
-    const variants = {
-        hidden: {
-            y: 100,
-            opacity: 0
-        }
-    }
+    // const variants = {
+    //     hidden: {
+    //         y: 100,
+    //         opacity: 0
+    //     }
+    // }
     return (
-        <motion.div ref={ref}
-            variants={variants}
-            animate={animation}
-            initial="hidden"
-        >
-            <Container
-                dangerouslySetInnerHTML={{ __html: children }}
-                className={className}
-                align={align}
-                color={color}>
-            </Container>
-        </motion.div>
+        // <motion.div ref={ref}
+        //     variants={variants}
+        //     animate={animation}
+        //     initial="hidden"
+        // >
+        <Container
+            dangerouslySetInnerHTML={{ __html: children }}
+            className={className}
+            align={align}
+            color={color}>
+        </Container>
+        // </motion.div>
     )
 }
 

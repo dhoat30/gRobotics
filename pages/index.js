@@ -42,7 +42,7 @@ export default function Home(props) {
         holaBot={props.holaBot}
         heroImages={props.heroImage}
         steps={props.steps[0].acf.steps}
-        media={props.media}
+      // media={props.media}
       />
     </React.Fragment >
   )
@@ -57,7 +57,7 @@ export async function getServerSideProps(context) {
   const holaBot = await getHomeRobot('holabot')
   const heroImages = await getHeroImage('home-page')
   const steps = await getPage('robot-installation-steps')
-  const media = await getMedia()
+  // const media = await getMedia()
   const contactData = await getContactInfo()
 
   return {
@@ -69,7 +69,7 @@ export async function getServerSideProps(context) {
       holaBot: holaBot[0],
       heroImage: heroImages,
       steps: steps,
-      media: media,
+      // media: media,
       contactData: contactData[0]
     },
 

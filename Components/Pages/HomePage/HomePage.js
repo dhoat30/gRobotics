@@ -90,9 +90,9 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps, all
             />
 
             <Steps steps={steps} />
-            <MaxWidthContainer backgroundColor="white">
+            {/* <MaxWidthContainer backgroundColor="white">
                 <Media media={media} />
-            </MaxWidthContainer>
+            </MaxWidthContainer> */}
             <ContactSection
                 title="Get A Quote"
                 emailTo="info@grobotics.co.nz"

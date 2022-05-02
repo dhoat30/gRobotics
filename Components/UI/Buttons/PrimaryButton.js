@@ -1,19 +1,16 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 
 function PrimaryButton({ children, className, onClick }) {
 
     return (
-        <motion.button
+        <button
             onClick={onClick}
             style={buttonStyle}
-            whileHover={{
-                scale: 1.1,
-                boxShadow: "0px 0px 8px var(--green)"
-            }}
+
             className={className}>
             {children}
-        </motion.button>
+        </button>
     )
 }
 

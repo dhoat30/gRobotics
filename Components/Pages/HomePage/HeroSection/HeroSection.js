@@ -5,39 +5,39 @@ import Image from 'next/image'
 import ColumnTitle from '../../../UI/Typography/Titles/ColumnTitle'
 import Link from 'next/link'
 import AnchorButton from '../../../UI/Buttons/AnchorButton'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+// import { motion, useAnimation } from 'framer-motion'
+// import { useInView } from 'react-intersection-observer'
 function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgroundColor, color, theme, showLink, link }) {
-    const { ref, inView } = useInView()
-    const animation = useAnimation()
-    const imageAnimation = useAnimation()
+    // const { ref, inView } = useInView()
+    // const animation = useAnimation()
+    // const imageAnimation = useAnimation()
 
-    useEffect(() => {
-        if (inView) {
-            animation.start({
-                opacity: 1,
-                transition: {
-                    duration: 0.3,
-                    delay: 0.9
-                }
-            })
+    // useEffect(() => {
+    //     if (inView) {
+    //         animation.start({
+    //             opacity: 1,
+    //             transition: {
+    //                 duration: 0.3,
+    //                 delay: 0.9
+    //             }
+    //         })
 
-            imageAnimation.start({
-                opacity: 1,
-                transition: {
-                    duration: 3,
-                    delay: 0.9
-                }
-            })
-        }
+    //         imageAnimation.start({
+    //             opacity: 1,
+    //             transition: {
+    //                 duration: 3,
+    //                 delay: 0.9
+    //             }
+    //         })
+    //     }
 
-    }, [inView])
+    // }, [inView])
 
-    const variants = {
-        hidden: {
-            opacity: 0
-        }
-    }
+    // const variants = {
+    //     hidden: {
+    //         opacity: 0
+    //     }
+    // }
     return (
         <Container backgroundColor={backgroundColor}>
             <MaxWidth>
@@ -47,30 +47,30 @@ function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgrou
 
                     <ColumnTitleSytle align="center" color={color}>{subtitle}</ColumnTitleSytle>
                     {showLink &&
-                        <motion.div ref={ref}
-                            variants={variants}
-                            animate={animation}
-                            initial="hidden"
-                        >
-                            <Link href={link} passHref><AnchorButton align="center">Learn More</AnchorButton></Link>
-                        </motion.div>
+                        // <motion.div ref={ref}
+                        //     variants={variants}
+                        //     animate={animation}
+                        //     initial="hidden"
+                        // >
+                        <Link href={link} passHref><AnchorButton align="center">Learn More</AnchorButton></Link>
+                        // </motion.div>
                     }
                 </Content>
 
-                <motion.div ref={ref}
+                {/* <motion.div ref={ref}
 
                     animate={imageAnimation}
                     initial={{ opacity: 0 }}
-                >
-                    <ImageContainer>
-                        <Image src={image}
-                            layout="responsive"
-                            width="100"
-                            height="100"
-                            alt={title}
-                        />
-                    </ImageContainer>
-                </motion.div>
+                > */}
+                <ImageContainer>
+                    <Image src={image}
+                        layout="responsive"
+                        width="100"
+                        height="100"
+                        alt={title}
+                    />
+                </ImageContainer>
+                {/* </motion.div> */}
             </MaxWidth>
         </Container>
     )

@@ -5,37 +5,37 @@ import Image from 'next/image'
 import Link from 'next/link'
 import AnchorButton from '../../../UI/Buttons/AnchorButton'
 import ColumnTitle from '../../../UI/Typography/Titles/ColumnTitle'
-import { motion, useAnimation } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+// import { motion, useAnimation } from 'framer-motion'
+// import { useInView } from 'react-intersection-observer'
 function BotCards({ title, subtitle, image, link }) {
-    const { ref, inView } = useInView()
-    const animation = useAnimation()
-    const imageAnimation = useAnimation()
+    // const { ref, inView } = useInView()
+    // const animation = useAnimation()
+    // const imageAnimation = useAnimation()
 
-    useEffect(() => {
-        if (inView) {
-            animation.start({
-                opacity: 1,
-                transition: {
-                    duration: 0.3,
-                    delay: 0.9
-                }
-            })
+    // useEffect(() => {
+    //     if (inView) {
+    //         animation.start({
+    //             opacity: 1,
+    //             transition: {
+    //                 duration: 0.3,
+    //                 delay: 0.9
+    //             }
+    //         })
 
-            imageAnimation.start({
-                opacity: 1,
-                transition: {
-                    duration: 3,
-                    delay: 0.9
-                }
-            })
-        }
-    }, [inView])
-    const variants = {
-        hidden: {
-            opacity: 0
-        }
-    }
+    //         imageAnimation.start({
+    //             opacity: 1,
+    //             transition: {
+    //                 duration: 3,
+    //                 delay: 0.9
+    //             }
+    //         })
+    //     }
+    // }, [inView])
+    // const variants = {
+    //     hidden: {
+    //         opacity: 0
+    //     }
+    // }
     return (
 
         <Container>
@@ -43,30 +43,30 @@ function BotCards({ title, subtitle, image, link }) {
                 <RowTitle align="center" color="var(--offWhite)">{title}</RowTitle>
                 {/* <Subtitle color="var(--offWhite)">{subtitle}</Subtitle> */}
                 <ColumnTitle align="center" color="var(--offWhite)">{subtitle}</ColumnTitle>
-                <motion.div ref={ref}
+                {/* <motion.div ref={ref}
                     variants={variants}
                     animate={animation}
                     initial="hidden"
-                >
-                    <Link href={link} passHref>
-                        <AnchorButton align="center">
-                            Learn More
-                        </AnchorButton>
-                    </Link>
-                </motion.div>
+                > */}
+                <Link href={link} passHref>
+                    <AnchorButton align="center">
+                        Learn More
+                    </AnchorButton>
+                </Link>
+                {/* </motion.div> */}
             </Content>
-            <motion.div ref={ref}
+            {/* <motion.div ref={ref}
                 animate={imageAnimation}
                 initial={{ opacity: 0 }}
-            >
-                <ImageContainer>
-                    <ImageStyle
-                        alt={title}
-                        src={image}
-                        layout="fill"
-                    />
-                </ImageContainer>
-            </motion.div>
+            > */}
+            <ImageContainer>
+                <ImageStyle
+                    alt={title}
+                    src={image}
+                    layout="fill"
+                />
+            </ImageContainer>
+            {/* </motion.div> */}
         </Container>
 
     )

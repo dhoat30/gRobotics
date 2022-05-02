@@ -5,9 +5,9 @@ import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer'
 import ColumnTitle from '../Typography/Titles/ColumnTitle'
 import Image from 'next/image'
 import Subtitle from '../Typography/Titles/Subtitle'
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { useAnimation } from 'framer-motion'
+// import { motion } from 'framer-motion'
+// import { useInView } from 'react-intersection-observer'
+// import { useAnimation } from 'framer-motion'
 import ExtraLargeTitle from '../Typography/Titles/ExtraLargeTitle'
 
 function ImageTwoTitleLayout({ firstTitle, firstSubtitle, secondTitle, secondSubtitle, video, backgroundColor, className, theme }) {
