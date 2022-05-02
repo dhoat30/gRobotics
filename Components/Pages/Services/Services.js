@@ -14,7 +14,6 @@ import Link from 'next/link'
 function Services({ services, faq }) {
 
     const serviceCard = services.reverse().map(item => {
-        console.log(item.acf)
 
         let url = item.acf.link
         return <Card key={item.id}>

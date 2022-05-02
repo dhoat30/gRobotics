@@ -9,7 +9,7 @@ export default function KettyBotPages(props) {
     const seo = {
         title: props.kettyBot.yoast_head_json.og_title,
         description: props.kettyBot.yoast_head_json.og_description,
-        imageSrc: props.kettyBot.yoast_head_json.og_image[0].url
+        imageSrc: props.kettyBot.yoast_head_json.og_image && props.kettyBot.yoast_head_json.og_image[0].url
     }
     const contactInfoCtx = useContext(ContactInfoContext)
 

@@ -7,7 +7,6 @@ import Subtitle from '../../../UI/Typography/Titles/Subtitle'
 
 function Features({ image, images, className, backgroundColor }) {
     const imagesList = images.map(item => {
-        console.log(item)
         return <ImageContainer key={item.image.ID}>
             <Image
                 src={item.image.url}

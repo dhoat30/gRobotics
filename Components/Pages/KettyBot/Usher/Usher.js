@@ -8,7 +8,6 @@ import RowTitle from '../../../UI/Typography/Titles/RowTitle'
 import Image from 'next/image'
 
 function Usher({ data }) {
-    console.log(data)
     return (
         <MaxWidthContainer backgroundColor="var(--white)">
             <Container>

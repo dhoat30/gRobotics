@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 function MenuLink({ title, link, hideMobileMenu }) {
     const anchorClickHandler = () => {
-        console.log("anchor link clicked")
         hideMobileMenu(false)
     }
     return (

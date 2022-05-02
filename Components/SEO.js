@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 
 function SEO({ seo }) {
     const router = useRouter()
-
     return (
         <Head>
             <link rel="icon" href="/images/favicon.ico" />

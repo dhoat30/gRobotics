@@ -19,7 +19,6 @@ function BellaBot({ robotData }) {
     const heroData = robotData.acf.robot_flexible_content.filter(item => {
         return item.acf_fc_layout === "hero_section"
     })
-    // console.log(robotData)
     return (
 
         <Container>

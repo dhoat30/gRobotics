@@ -11,7 +11,6 @@ import styled from 'styled-components'
 import HorizontalLayout from '../../UI/TextImageLayouts/HorizontalLayout'
 import RGBD from './RGBD/RGBD'
 function BellaBot({ robotData }) {
-    // console.log(robotData.acf.robot_flexible_content)
     if (!robotData) {
         return null
     }
@@ -19,7 +18,6 @@ function BellaBot({ robotData }) {
         return item.acf_fc_layout === "hero_section"
     })
     const dataArray = robotData.acf.robot_flexible_content
-    console.log(dataArray)
     return (
         <div>
             <HeroImageText

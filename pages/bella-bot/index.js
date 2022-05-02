@@ -10,7 +10,7 @@ export default function Home(props) {
     const seo = {
         title: props.bellaBot.yoast_head_json.og_title,
         description: props.bellaBot.yoast_head_json.og_description,
-        imageSrc: props.bellaBot.yoast_head_json.og_image[0].url
+        imageSrc: props.bellaBot.yoast_head_json.og_image && props.bellaBot.yoast_head_json.og_image[0].url
     }
     const contactInfoCtx = useContext(ContactInfoContext)
 

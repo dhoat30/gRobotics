@@ -11,12 +11,14 @@ import ContactInfoContext from '../store/contact-info-context'
 
 export default function Home(props) {
   const seo = {
-    title: "G Robotics |  Browse Robots For Restaurants, Hospitals & Warehouses",
-    description: "International High-tech Enterprise that integrates R&D, design, production, and sales businesses of catering service robots together."
+    title: props.homePageSeo.yoast_head_json.title,
+    description: props.homePageSeo.yoast_head_json.description,
+    imageSrc: props.homePageSeo.yoast_head_json.og_image && props.homePageSeo.yoast_head_json.og_image[0].url
   }
+
   let allRobots = [
     props.kettyBot,
-    props.bellaBot,
+    props.homePageSeo,
     props.puduBot,
     props.holaBot
   ]
@@ -26,7 +28,6 @@ export default function Home(props) {
     contactInfoCtx.getContactData(props.contactData)
   }, [])
 
-  console.log(contactInfoCtx)
 
   return (
     < React.Fragment >
@@ -57,6 +58,7 @@ export async function getServerSideProps(context) {
   const holaBot = await getHomeRobot('holabot')
   const heroImages = await getHeroImage('home-page')
   const steps = await getPage('robot-installation-steps')
+  const homePageSeo = await getPage('home-page')
   // const media = await getMedia()
   const contactData = await getContactInfo()
 
@@ -70,7 +72,8 @@ export async function getServerSideProps(context) {
       heroImage: heroImages,
       steps: steps,
       // media: media,
-      contactData: contactData[0]
+      contactData: contactData[0],
+      homePageSeo: homePageSeo[0]
     },
 
   }

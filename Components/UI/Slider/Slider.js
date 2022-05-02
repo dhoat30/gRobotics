@@ -5,9 +5,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import Link from 'next/link'
 function Slider({ sliderImages }) {
-    // console.log(sliderImages)
     const slide = sliderImages.reverse().map((item, index) => {
-        // console.log(item.link)
 
         return <Carousel.Item key={index}>
             <Link href={item.link} passHref>

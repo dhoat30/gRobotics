@@ -9,8 +9,9 @@ import ContactInfoContext from '../store/contact-info-context'
 
 export default function Home(props) {
   const seo = {
-    title: "Contact Us | G Robotics |  Browse Robots For Restaurants, Hospitals & Warehouses",
-    description: "International High-tech Enterprise that integrates R&D, design, production, and sales businesses of catering service robots together."
+    title: props.contactData.yoast_head_json.title,
+    description: props.contactData.yoast_head_json.description,
+    imageSrc: props.contactData.yoast_head_json.og_image && props.contactData.yoast_head_json.og_image[0].url
   }
   const contactInfoCtx = useContext(ContactInfoContext)
 

@@ -47,7 +47,6 @@ function ContactForm({ emailTo, emailRouteUrl, cancelPass, dropShadow, className
     // submit handler
     const submitHandler = (e) => {
         e.preventDefault()
-        console.log("button clicked")
         setEnteredNameTouched(true)
         setEnteredPhoneTouched(true)
         setEnteredEmailTouched(true)
@@ -78,7 +77,6 @@ function ContactForm({ emailTo, emailRouteUrl, cancelPass, dropShadow, className
         })
             .then(res => res.json())
             .then(res => {
-                console.log(res)
                 if (res === 200) {
                     setEnteredName('')
                     setEnteredEmail('')

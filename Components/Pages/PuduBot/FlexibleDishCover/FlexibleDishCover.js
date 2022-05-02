@@ -6,7 +6,6 @@ import ColumnTitle from '../../../UI/Typography/Titles/ColumnTitle'
 import Paragraph from '../../../UI/Typography/Paragraph/Paragraph'
 import RowTitle from '../../../UI/Typography/Titles/RowTitle'
 function FlexibleDishCover({ data }) {
-    console.log(data)
 
     const list = data.bullet_points.map((item, index) => {
         return <ListItem key={index}>

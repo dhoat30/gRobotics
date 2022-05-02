@@ -3,7 +3,6 @@ import Image from 'next/image'
 import styled from 'styled-components'
 
 function Logo({ className, logo, videoLogo }) {
-    console.log(videoLogo)
     return (
         <Container className={className}>
             <ImageStyle

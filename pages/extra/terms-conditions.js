@@ -9,6 +9,8 @@ export default function Home(props) {
     const seo = {
         title: props.privacyPolicy.yoast_head_json.og_title,
         description: props.privacyPolicy.yoast_head_json.og_description,
+        imageSrc: props.privacyPolicy.yoast_head_json.og_image && props.privacyPolicy.yoast_head_json.og_image[0].url
+
     }
     const contactInfoCtx = useContext(ContactInfoContext)
 

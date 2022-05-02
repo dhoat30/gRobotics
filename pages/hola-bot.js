@@ -6,11 +6,10 @@ import getContactInfo from '../util/get-contact-info'
 import ContactInfoContext from '../store/contact-info-context'
 
 export default function PuduBotPage(props) {
-    console.log(props)
     const seo = {
         title: props.robotData.yoast_head_json.og_title,
         description: props.robotData.yoast_head_json.og_description,
-        imageSrc: props.robotData.yoast_head_json.og_image[0].url
+        imageSrc: props.robotData.yoast_head_json.og_image && props.robotData.yoast_head_json.og_image[0].url
     }
     const contactInfoCtx = useContext(ContactInfoContext)
 

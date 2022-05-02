@@ -5,12 +5,13 @@ import getServices from '../util/get-services'
 import getFaq from '../util/get-faq'
 import getContactInfo from '../util/get-contact-info'
 import ContactInfoContext from '../store/contact-info-context'
-
+import getPage from '../util/get-page'
 export default function Home(props) {
-    console.log(props)
     const seo = {
-        title: "G Robotics | Browse Robots For Restaurants, Hospitals & Warehouses",
-        description: "International High-tech Enterprise that integrates R&D, design, production, and sales businesses of catering service robots together."
+        title: props.servicesSeo.yoast_head_json.title,
+        description: props.servicesSeo.yoast_head_json.description,
+        imageSrc: props.servicesSeo.yoast_head_json.og_image && props.servicesSeo.yoast_head_json.og_image[0].url
+
     }
     const contactInfoCtx = useContext(ContactInfoContext)
 
@@ -34,12 +35,14 @@ export async function getServerSideProps(context) {
     const services = await getServices()
     const faq = await getFaq()
     const contactData = await getContactInfo()
+    const servicesSeo = await getPage('services')
 
     return {
         props: {
             services: services,
             faq: faq,
-            contactData: contactData[0]
+            contactData: contactData[0],
+            servicesSeo: servicesSeo[0]
 
         },
 

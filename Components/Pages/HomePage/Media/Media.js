@@ -5,7 +5,6 @@ import Video from '../../../UI/Video/Video'
 import Subtitle from '../../../UI/Typography/Titles/Subtitle'
 import ColumnTitle from '../../../UI/Typography/Titles/ColumnTitle'
 function Media({ media }) {
-    console.log(media)
     const card = media.map(item => {
         return <Card key={item.id}>
             <Video video={item.content.rendered} />

@@ -13,7 +13,6 @@ import Specifications from '../../UI/Specifications/Specifications'
 import ProductColors from './ProductColors/ProductColors'
 import Usher from './Usher/Usher'
 function KettyBot({ robotData }) {
-    console.log(robotData.acf.robot_flexible_content)
     const kettyBot = robotData.acf.robot_flexible_content
     return (
 
