@@ -37,6 +37,9 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps, all
     return (
 
         <Container>
+            <video autoPlay loop style={{ width: '500px', height: '500px' }}>
+                <source src="https://watch.videodelivery.net/019cf67db448787e33fd0b5dc237294e" />
+            </video>
 
             <Video video={heroData[0].acf.video} />
             <Slider

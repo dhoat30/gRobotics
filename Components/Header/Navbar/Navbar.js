@@ -45,10 +45,6 @@ function NavbarComponent() {
     // contact context 
     const contactInfoCtx = useContext(ContactInfoContext)
 
-    if (contactInfoCtx.contactData === 'false') {
-        return
-    }
-    console.log(contactInfoCtx)
 
     // hide menu on link click
     const linkClickHandler = (value) => {
