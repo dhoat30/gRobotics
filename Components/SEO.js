@@ -25,6 +25,7 @@ function SEO({ seo }) {
             <meta property="og:url" content={`https://grobotics.co.nz${router.asPath}`} key="ogurl" />
             <meta property="og:image" content={seo.imageSrc} key="ogimage" />
             <meta property="og:site_name" content={"G Robotics"} key="ogsitename" />
+            {/* <meta name="robots" content="index, follow"></meta> */}
         </Head>
     )
 }

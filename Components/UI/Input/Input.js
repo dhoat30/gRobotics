@@ -6,6 +6,7 @@ function Input(props) {
         <React.Fragment >
             <Label>{props.label}</Label>
             <InputStyle
+
                 isInvalid={props.isInvalid}
                 type={props.type}
                 placeholder={props.placeholder}

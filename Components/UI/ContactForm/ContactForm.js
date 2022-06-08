@@ -67,7 +67,10 @@ function ContactForm({ emailTo, emailRouteUrl, cancelPass, dropShadow, className
         setShowLoading(true)
         setButtonMessage("Sending...")
         setErrorMessage('')
-
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'contactFormSubmit'
+        });
         fetch(emailRouteUrl, {
             method: "POST",
             headers: {
@@ -107,6 +110,7 @@ function ContactForm({ emailTo, emailRouteUrl, cancelPass, dropShadow, className
                 <InputContainer>
                     <Input
                         label="Name"
+                        name="name"
                         isInvalid={nameInputIsInvalid}
                         type="text"
                         placeholder="Enter your name"
@@ -121,6 +125,7 @@ function ContactForm({ emailTo, emailRouteUrl, cancelPass, dropShadow, className
                 <InputContainer>
                     <Input
                         label="Email"
+                        name="email"
                         isInvalid={emailInputIsInvalid}
                         type="email"
                         placeholder="Enter your email"
@@ -134,6 +139,7 @@ function ContactForm({ emailTo, emailRouteUrl, cancelPass, dropShadow, className
                 <InputContainer>
                     <Input
                         label="Phone Number"
+                        name="phone"
                         isInvalid={phoneInputIsInvalid}
                         type="text"
                         placeholder="Enter your phone number"

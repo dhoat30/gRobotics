@@ -10,6 +10,7 @@ import getContactInfo from '../util/get-contact-info'
 import ContactInfoContext from '../store/contact-info-context'
 
 export default function Home(props) {
+  console.log(props)
   const seo = {
     title: props.homePageSeo.yoast_head_json.title,
     description: props.homePageSeo.yoast_head_json.description,
