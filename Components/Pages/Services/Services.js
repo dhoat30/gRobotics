@@ -46,7 +46,8 @@ function Services({ services, faq }) {
             {/* <HeroVideo /> */}
             <MaxWidthContainer backgroundColor="var(--white)">
                 <ServicesContainer>
-                    <RowTitle align="center">Our Services</RowTitle>
+                    <Title>G Robotics Services </Title>
+
                     <Cards>
                         {serviceCard}
                     </Cards>
@@ -103,4 +104,19 @@ display: block;
 const FAQSection = styled.section`
  background: white;
  padding: 100px 50px;
+`
+
+const Title = styled.h1`
+margin: 10px 0;
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--darkGrey);
+    @media (max-width: 500px)
+
+{
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+}
 `

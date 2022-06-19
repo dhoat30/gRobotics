@@ -17,6 +17,7 @@ import Slider from '../../UI/Slider/Slider'
 import Steps from './Steps/Steps'
 import RobotList from './RobotList/RobotList'
 import Media from './Media/Media'
+import ExtraLargeTitle from '../../UI/Typography/Titles/ExtraLargeTitle'
 function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps, allRobots, media }) {
     let robots = [kettyBot, bellaBot, puduBot, holaBot]
     const sliderImages = heroImages.map(item => {
@@ -59,9 +60,9 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps, all
                 showLink={true}
                 link="/hola-bot"
             />
-
             {/* <img src={robotData.kettyBot.acf.robot_flexible_content[0].desktop_image} width="50%" /> */}
             <MaxWidthContainer backgroundColor="var(--silver)">
+                <Heading1>Robots for Restaurants</Heading1>
 
                 <Flex>
                     <BotCards
@@ -96,6 +97,7 @@ function HomePage({ kettyBot, bellaBot, puduBot, holaBot, heroImages, steps, all
                 <Media media={media} />
             </MaxWidthContainer> */}
             <ContactSection
+                tag="h2"
                 title="Get A Quote"
                 emailTo="info@grobotics.co.nz"
                 emailRouteUrl="https://greensrobotics.co.nz/wp-json/webduel/v1/contact-email"
@@ -112,9 +114,18 @@ padding-bottom: 0;
 `
 const Flex = styled.div`
 display: flex;
-padding: 50px 0;
+padding: 0 0 50px 0;
 justify-content: center;
 @media (max-width: 1000px){ 
     flex-wrap: wrap;
 }
+`
+const Heading1 = styled.h1`
+    font-size: 4rem;
+    text-align:center; 
+    padding:50px 10px 0 10px ;
+    font-weight: 700;
+    @media(max-width: 1000px){ 
+        font-size: 3rem;
+    }
 `

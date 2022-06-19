@@ -6,7 +6,7 @@ function PrivacyPolicy({ privacyPolicy }) {
     return (
         <MaxWidthContainer backgroundColor="var(--offWhite)">
             <Container>
-                <RowTitle>{privacyPolicy.title.rendered}</RowTitle>
+                <Title>{privacyPolicy.title.rendered} </Title>
                 <div className="policies" dangerouslySetInnerHTML={{ __html: privacyPolicy.content.rendered }}
                 ></div>
             </Container>
@@ -17,4 +17,18 @@ function PrivacyPolicy({ privacyPolicy }) {
 export default PrivacyPolicy
 const Container = styled.div`
 padding: 50px 0;
+`
+const Title = styled.h1`
+margin: 10px 0;
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 600;
+    text-align: left;
+    color: var(--darkGrey);
+    @media (max-width: 500px)
+
+{
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+}
 `

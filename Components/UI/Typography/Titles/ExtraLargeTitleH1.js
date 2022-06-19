@@ -4,7 +4,7 @@ import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 
-function ExtraLargeTitle({ children, align, color, className, theme }) {
+function ExtraLargeTitleH1({ children, align, color, className, theme }) {
     // const { ref, inView } = useInView()
     // const animation = useAnimation()
 
@@ -44,8 +44,8 @@ function ExtraLargeTitle({ children, align, color, className, theme }) {
     )
 }
 
-export default ExtraLargeTitle
-const Container = styled.h2`
+export default ExtraLargeTitleH1
+const Container = styled.h1`
 font-size: 8rem;
 font-weight: 700;
 margin: 10px 0;

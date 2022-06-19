@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import ExtraLargeTitle from '../Typography/Titles/ExtraLargeTitle'
+import ExtraLargeTitleH1 from '../Typography/Titles/ExtraLargeTitleH1'
+
 import LargeTitle from '../Typography/Titles/LargeTitle'
 import Subtitle from '../Typography/Titles/Subtitle'
 import Image from 'next/image'
@@ -30,7 +31,7 @@ function HeroImageText({ image, title, subtitle, imageWidth, imageHeight, backgr
         <Container backgroundColor={backgroundColor}>
             <MaxWidth>
                 <Content>
-                    <ExtraLargeTitle color={color}>{title}</ExtraLargeTitle>
+                    <ExtraLargeTitleH1 color={color}>{title}</ExtraLargeTitleH1>
                     <ColumnTitleSytle color={color}>{subtitle}</ColumnTitleSytle>
                 </Content>
 

@@ -42,8 +42,9 @@ function HeroSection({ image, title, subtitle, imageWidth, imageHeight, backgrou
         <Container backgroundColor={backgroundColor}>
             <MaxWidth>
                 <Content>
-
-                    <ExtraLargeTitle align="center" color={color}>{title}</ExtraLargeTitle>
+                    <Heading2 color={color} align="center">
+                        {title}
+                    </Heading2>
 
                     <ColumnTitleSytle align="center" color={color}>{subtitle}</ColumnTitleSytle>
                     {showLink &&
@@ -108,4 +109,16 @@ overflow: hidden;
 const ImageStyle = styled(Image)`
 object-fit: cover;
 object-position: top;
+`
+const Heading2 = styled.h2`
+margin: 10px 0;
+font-size: 4rem;
+  line-height: 1rem;
+font-weight: ${props => props.fontWeight ? props.fontWeight : "600"};
+text-align: ${props => props.align ? props.align : "left"};
+color: ${props => props.color ? props.color : "var(--darkGrey)"}; 
+@media (max-width: 500px) {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+}
 `
